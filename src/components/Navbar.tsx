@@ -66,14 +66,14 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" onClick={handleNavClick} className="flex items-center">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
+                className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
               >
                 SLYTHOS IT
               </motion.div>
@@ -115,17 +115,17 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button and toggle */}
-          <div className="flex md:hidden items-center space-x-4">
+          <div className="flex md:hidden items-center space-x-2 sm:space-x-4">
             <DarkModeToggle />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="inline-flex items-center justify-center p-1.5 sm:p-2 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
               <span className="sr-only">Open main menu</span>
               <svg
-                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
+                className={`${isOpen ? 'hidden' : 'block'} h-5 w-5 sm:h-6 sm:w-6`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ const Navbar = () => {
                 />
               </svg>
               <svg
-                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
+                className={`${isOpen ? 'block' : 'hidden'} h-5 w-5 sm:h-6 sm:w-6`}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

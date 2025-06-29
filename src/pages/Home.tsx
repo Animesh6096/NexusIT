@@ -212,7 +212,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30"
         >
           <motion.a 
             href="#about" 
@@ -220,16 +220,16 @@ const Home = () => {
             aria-label="Scroll down"
             whileHover={{ y: -2 }}
           >
-            <span className="text-sm mb-3 font-medium">Discover More</span>
+            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium">Discover More</span>
             <motion.div
-              animate={{ y: [0, 8, 0] }}
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center"
+              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center"
             >
               <motion.div
-                animate={{ y: [0, 12, 0] }}
+                animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1 h-2 bg-white rounded-full mt-2"
+                className="w-1 h-1.5 sm:h-2 bg-white rounded-full mt-1.5 sm:mt-2"
               />
             </motion.div>
           </motion.a>
