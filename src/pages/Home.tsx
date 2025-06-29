@@ -205,20 +205,20 @@ const Home = () => {
               className="relative"
             >
               <div className="relative">
-                {/* Floating Cards */}
+                {/* Floating Cards - Hidden on mobile, visible on lg+ */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   whileHover={{ y: -5 }}
-                  className="absolute top-0 right-0 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-10"
+                  className="hidden lg:block absolute top-0 right-0 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-10"
                 >
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Active Projects</span>
                   </div>
-                  <div className="text-2xl font-bold text-primary mt-1">15+</div>
+                  <div className="text-xl font-bold text-primary mt-1">15+</div>
                 </motion.div>
 
                 <motion.div
@@ -227,26 +227,26 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                   whileHover={{ y: -5 }}
-                  className="absolute bottom-4 left-0 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-10"
+                  className="hidden lg:block absolute bottom-4 left-0 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-10"
                 >
                   <div className="flex items-center space-x-2">
-                    <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                     <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Client Satisfaction</span>
                   </div>
-                  <div className="text-2xl font-bold text-primary mt-1">98%</div>
+                  <div className="text-xl font-bold text-primary mt-1">98%</div>
                 </motion.div>
 
-                {/* Main Visual */}
+                {/* Main Visual - Responsive */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="bg-gradient-to-br from-primary/20 to-blue-600/20 rounded-2xl p-8 mx-8"
+                  className="bg-gradient-to-br from-primary/20 to-blue-600/20 rounded-2xl p-4 sm:p-6 lg:p-8 mx-2 sm:mx-4 lg:mx-8"
                 >
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                     {[
                       { icon: "💻", label: "Development" },
                       { icon: "🎨", label: "Design" },
@@ -261,15 +261,48 @@ const Home = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                        whileHover={{ scale: 1.1 }}
-                        className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md text-center"
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-white dark:bg-gray-800 p-3 sm:p-4 rounded-lg shadow-md text-center"
                       >
-                        <div className="text-2xl mb-2">{item.icon}</div>
+                        <div className="text-lg sm:text-xl lg:text-2xl mb-1 sm:mb-2">{item.icon}</div>
                         <div className="text-xs font-medium text-gray-700 dark:text-gray-300">{item.label}</div>
                       </motion.div>
                     ))}
                   </div>
                 </motion.div>
+
+                {/* Mobile Stats Cards - Visible only on mobile */}
+                <div className="lg:hidden mt-6 grid grid-cols-2 gap-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700"
+                  >
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Active Projects</span>
+                    </div>
+                    <div className="text-2xl font-bold text-primary">15+</div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-100 dark:border-gray-700"
+                  >
+                    <div className="flex items-center space-x-2 mb-2">
+                      <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Satisfaction</span>
+                    </div>
+                    <div className="text-2xl font-bold text-primary">98%</div>
+                  </motion.div>
+                </div>
 
                 {/* Background Elements */}
                 <motion.div
