@@ -75,7 +75,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
               >
-                NexusIT
+                SLYTHOS IT
               </motion.div>
             </Link>
           </div>

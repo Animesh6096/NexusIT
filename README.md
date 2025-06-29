@@ -1,7 +1,7 @@
 
-# NexusIT Website
+# SLYTHOS IT Website
 
-A modern, responsive company website for NexusIT, built with React, TypeScript, Vite, and Tailwind CSS.
+A modern, responsive company website for SLYTHOS IT, built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## Features
 
@@ -23,7 +23,7 @@ A modern, responsive company website for NexusIT, built with React, TypeScript, 
 ### Installation
 
 ```bash
-cd nexusit-website
+cd slythos-it-website
 npm install
 # or
 yarn install
@@ -58,7 +58,7 @@ yarn lint
 ## Project Structure
 
 ```
-nexusit-website/
+slythos-it-website/
   ├── public/           # Static assets
   ├── src/              # Source code
   │   ├── components/   # Reusable React components

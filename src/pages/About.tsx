@@ -21,7 +21,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.8 }}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6"
               >
-                About NexusIT
+                About SLYTHOS IT
               </motion.h1>
               <motion.div 
                 initial={{ opacity: 0, width: 0 }}
@@ -57,7 +57,7 @@ const AboutPage = () => {
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6">Our Story</h2>
               <div className="h-1 w-16 md:w-20 bg-primary mb-4 md:mb-8"></div>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-4 md:mb-6">
-                Founded in 2015, NexusIT started as a small team of passionate developers with a shared vision: 
+                Founded in 2015, SLYTHOS IT started as a small team of passionate developers with a shared vision: 
                 to make cutting-edge technology accessible to businesses of all sizes. What began as a boutique 
                 development shop has grown into a comprehensive software company serving clients worldwide.
               </p>
@@ -68,7 +68,7 @@ const AboutPage = () => {
                 modernize their digital infrastructure.
               </p>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300">
-                Today, NexusIT continues to push the boundaries of what's possible in software development, 
+                Today, SLYTHOS IT continues to push the boundaries of what's possible in software development, 
                 combining technical excellence with creative thinking to craft solutions that address 
                 real-world challenges.
               </p>
@@ -83,7 +83,7 @@ const AboutPage = () => {
             >
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="NexusIT team in discussion" 
+                alt="SLYTHOS IT team in discussion" 
                 className="rounded-lg shadow-xl w-full"
               />
             </motion.div>
@@ -171,7 +171,7 @@ const AboutPage = () => {
               </div>
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 md:mb-4">Our Values</h3>
               <p className="text-sm md:text-base text-gray-700 dark:text-gray-300">
-                Excellence, integrity, innovation, collaboration, and client-centricity guide everything we do at NexusIT, 
+                Excellence, integrity, innovation, collaboration, and client-centricity guide everything we do at SLYTHOS IT, 
                 shaping how we approach our work and build relationships.
               </p>
             </motion.div>

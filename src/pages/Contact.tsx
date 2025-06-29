@@ -119,7 +119,7 @@ const ContactPage = () => {
             {[
               {
                 title: 'Email Us',
-                info: 'nexusit.official@gmail.com',
+                info: 'slythosit.official@gmail.com',
                 description: 'For general inquiries',
                 icon: (
                   <svg className="h-8 w-8 md:h-12 md:w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -423,8 +423,8 @@ const ContactPage = () => {
           <div className="max-w-3xl mx-auto">
             {[
               {
-                question: 'What services does NexusIT offer?',
-                answer: 'NexusIT offers a comprehensive range of software development services including web development (e-commerce), software integration, cybersecurity solutions, app development, networking solutions, UI/UX design, software quality assurance, software maintenance, data science & analytics, and machine learning & AI tailored to your business needs.'
+                question: 'What services does SLYTHOS IT offer?',
+                answer: 'SLYTHOS IT offers a comprehensive range of software development services including web development (e-commerce), software integration, cybersecurity solutions, app development, networking solutions, UI/UX design, software quality assurance, software maintenance, data science & analytics, and machine learning & AI tailored to your business needs.'
               },
               {
                 question: 'How long does a typical project take to complete?',

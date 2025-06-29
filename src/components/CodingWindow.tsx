@@ -5,8 +5,8 @@ import { useTheme } from '../contexts/ThemeContext';
 const CodingWindow = () => {
   const [text, setText] = useState('');
   const { darkMode } = useTheme();
-  const codeSnippet = `// NexusIT Web Solutions
-class NexusITApp {
+  const codeSnippet = `// SLYTHOS IT Web Solutions
+class SLYTHOSITApp {
   constructor() {
     this.stack = {
       frontend: 'React & Tailwind',
@@ -16,12 +16,12 @@ class NexusITApp {
   }
 
   deploy() {
-    console.log('🚀 Deploying NexusIT Web App...');
+    console.log('🚀 Deploying SLYTHOS IT Web App...');
     return 'Success';
   }
 }
 
-const app = new NexusITApp();
+const app = new SLYTHOSITApp();
 app.deploy();`;
 
   useEffect(() => {
@@ -67,7 +67,7 @@ app.deploy();`;
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
-        <div className="mx-auto text-gray-400 text-sm font-mono">NexusIT_App.ts</div>
+        <div className="mx-auto text-gray-400 text-sm font-mono">SLYTHOS_IT_App.ts</div>
       </div>
       
       {/* Code Content */}

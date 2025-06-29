@@ -67,7 +67,7 @@ const Footer = () => {
                     whileHover={{ scale: 1.05 }}
                     className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
                   >
-                    NexusIT
+                    SLYTHOS IT
                   </motion.div>
                 </Link>
                 <p className="text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 leading-relaxed text-sm">
@@ -165,8 +165,8 @@ const Footer = () => {
                     <div className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
                       <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
                       <span className="text-gray-500 dark:text-gray-400 mr-2">Email:</span>
-                      <a href="mailto:contact@nexusit.com" className="hover:text-primary transition-colors duration-300">
-                        contact@nexusit.com
+                      <a href="mailto:contact@slythosit.com" className="hover:text-primary transition-colors duration-300">
+                        contact@slythosit.com
                       </a>
                     </div>
                   </li>
@@ -234,7 +234,7 @@ const Footer = () => {
                 transition={{ duration: 0.8 }}
                 className="text-sm text-gray-500 dark:text-gray-400 mb-2 sm:mb-0"
               >
-                © {currentYear} NexusIT. All rights reserved. Crafted with passion for innovation.
+                © {currentYear} SLYTHOS IT. All rights reserved. Crafted with passion for innovation.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0 }}

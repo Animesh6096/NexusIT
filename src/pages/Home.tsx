@@ -1,18 +1,12 @@
 import { motion } from 'framer-motion'
 import Button from '../components/Button'
-import WebAnimation from '../components/WebAnimation'
 import CodingWindow from '../components/CodingWindow'
+import WebAnimation from '../components/WebAnimation'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 import { useRef } from 'react'
 
 const Home = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  
-  // Parallax effect for hero background
-  const [backgroundRef, backgroundY] = useScrollAnimation({
-    offset: [0, 1],
-    outputRange: [0, 100]
-  });
 
   // Fade effect for services
   const [servicesRef, servicesOpacity] = useScrollAnimation({
@@ -29,77 +23,216 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-screen flex items-center overflow-hidden">
-        <motion.div 
-          ref={backgroundRef}
-          style={{ y: backgroundY }}
-          className="absolute inset-0 bg-gradient-to-r from-gray-900 to-blue-900 opacity-80 z-0 dark:from-gray-800 dark:to-gray-700"
-        ></motion.div>
-        <motion.div 
-          ref={backgroundRef}
-          className="absolute inset-0 z-10 opacity-20 dark:opacity-30"
-          style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            y: backgroundY
-          }}
-        ></motion.div>
-        <div className="absolute inset-0 z-20 pointer-events-auto">
-          <WebAnimation />
+      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-blue-900 dark:from-gray-950 dark:via-slate-900 dark:to-gray-900">
+        {/* WebAnimation cursor effect */}
+        <WebAnimation />
+        
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Primary animated blob */}
+          <motion.div
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+              opacity: [0.3, 0.6, 0.3]
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute -top-10 -right-10 w-96 h-96 bg-gradient-to-br from-primary/30 to-blue-500/30 rounded-full blur-3xl"
+          />
+          
+          {/* Secondary animated blob */}
+          <motion.div
+            animate={{
+              scale: [1.2, 0.8, 1.2],
+              rotate: [360, 180, 0],
+              opacity: [0.2, 0.5, 0.2]
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 5
+            }}
+            className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+          />
+
+          {/* Floating particles */}
+          <div className="absolute inset-0">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  y: [0, -20, 0],
+                  opacity: [0.3, 0.8, 0.3],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 4,
+                  repeat: Infinity,
+                  delay: Math.random() * 5,
+                  ease: "easeInOut"
+                }}
+                className="absolute w-1 h-1 bg-white/40 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+              />
+            ))}
+          </div>
+
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="w-full h-full" style={{
+              backgroundImage: `
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '50px 50px'
+            }} />
+          </div>
         </div>
+
         <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="w-full md:w-1/2">
-              <motion.h1
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-3/5 text-center lg:text-left">
+              {/* Badge */}
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 dark:text-gray-100 leading-tight"
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-medium mb-6"
               >
-                Innovative Software Solutions for the Modern World
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse" />
+                Next-Gen Development Studio
+              </motion.div>
+
+              {/* Main Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight"
+              >
+                Building the
+                <motion.span 
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="block bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent"
+                >
+                  Digital Future
+                </motion.span>
+                One Code at a Time
               </motion.h1>
+
+              {/* Subtitle */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 sm:mb-8 dark:text-gray-400"
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl"
               >
-                We build cutting-edge web and mobile applications that help businesses thrive in the digital landscape.
+                We craft exceptional digital experiences that transform businesses and connect people. 
+                From concept to deployment, we turn your vision into powerful software solutions.
               </motion.p>
+
+              {/* CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-wrap justify-center gap-4"
+                className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
               >
-                <Button to="/contact" size="lg">
-                  Get in Touch
+                <Button 
+                  to="/contact" 
+                  size="lg"
+                  className="group relative overflow-hidden bg-primary hover:bg-primary/90 transform hover:scale-105 transition-all duration-300"
+                >
+                  <span className="relative z-10">Start Your Project</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </Button>
-                <Button to="/projects" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-primary hover:!border-white">
-                  View Our Work
+                
+                <Button 
+                  to="/projects" 
+                  variant="outline" 
+                  size="lg" 
+                  className="group !border-white/30 !text-white hover:!bg-white/10 hover:!border-white backdrop-blur-sm"
+                >
+                  Explore Our Work
+                  <svg className="w-5 h-5 ml-2 group-hover:rotate-45 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </Button>
               </motion.div>
+
+              {/* Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-wrap gap-8 justify-center lg:justify-start"
+              >
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">50+</div>
+                  <div className="text-sm text-gray-400">Projects Delivered</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">98%</div>
+                  <div className="text-sm text-gray-400">Client Satisfaction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">24/7</div>
+                  <div className="text-sm text-gray-400">Support Available</div>
+                </div>
+              </motion.div>
             </div>
-            <CodingWindow />
+
+            {/* Enhanced Coding Window */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-full lg:w-2/5"
+            >
+              <CodingWindow />
+            </motion.div>
           </div>
         </div>
+
+        {/* Enhanced Scroll Indicator */}
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
         >
-          <a 
+          <motion.a 
             href="#about" 
-            className="flex flex-col items-center text-white dark:text-gray-300"
+            className="flex flex-col items-center text-white/80 hover:text-white transition-colors group"
             aria-label="Scroll down"
+            whileHover={{ y: -2 }}
           >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <svg className="animate-bounce w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </a>
+            <span className="text-sm mb-3 font-medium">Discover More</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center"
+            >
+              <motion.div
+                animate={{ y: [0, 12, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1 h-2 bg-white rounded-full mt-2"
+              />
+            </motion.div>
+          </motion.a>
         </motion.div>
       </section>
 
@@ -155,7 +288,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
               >
-                NexusIT is a forward-thinking software company dedicated to crafting innovative digital solutions 
+                SLYTHOS IT is a forward-thinking software company dedicated to crafting innovative digital solutions 
                 for businesses of all sizes. We specialize in bridging the gap between complex technology and 
                 business needs, delivering software that creates new opportunities for growth.
               </motion.p>
