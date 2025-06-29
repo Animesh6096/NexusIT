@@ -94,22 +94,270 @@ const ContactPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-16 md:py-24 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 md:mb-4">Contact Us</h1>
-            <div className="h-1 w-16 md:w-24 bg-primary mb-4 md:mb-8"></div>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200">
-              Get in touch with our team to discuss your project needs or inquire about our services.
-              We'd love to hear from you.
-            </p>
-          </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-blue-900 overflow-hidden">
+        {/* Communication Network Visualization */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0">
+            {/* Network nodes and connections */}
+            <svg className="w-full h-full" viewBox="0 0 1200 800">
+              {/* Connection lines */}
+              {[...Array(10)].map((_, i) => (
+                <motion.line
+                  key={i}
+                  x1={200 + i * 100}
+                  y1={200 + Math.sin(i) * 100}
+                  x2={300 + i * 100}
+                  y2={300 + Math.cos(i) * 100}
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  className="text-primary/40"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 2, delay: i * 0.2, repeat: Infinity, repeatType: "reverse" }}
+                />
+              ))}
+              {/* Network nodes */}
+              {[...Array(12)].map((_, i) => (
+                <motion.circle
+                  key={i}
+                  cx={150 + (i % 4) * 250}
+                  cy={150 + Math.floor(i / 4) * 200}
+                  r="6"
+                  fill="currentColor"
+                  className="text-teal-400/60"
+                  animate={{ 
+                    opacity: [0.3, 1, 0.3],
+                    scale: [0.8, 1.2, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.3
+                  }}
+                />
+              ))}
+            </svg>
+          </div>
         </div>
+
+        {/* Floating Contact Icons */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[
+            { Icon: '📧', delay: 0, pos: { x: 10, y: 20 } },
+            { Icon: '📱', delay: 0.5, pos: { x: 85, y: 30 } },
+            { Icon: '🌐', delay: 1, pos: { x: 15, y: 70 } },
+            { Icon: '💬', delay: 1.5, pos: { x: 80, y: 60 } },
+            { Icon: '📍', delay: 2, pos: { x: 50, y: 15 } },
+            { Icon: '🤝', delay: 2.5, pos: { x: 45, y: 85 } }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-3xl opacity-30"
+              style={{
+                left: `${item.pos.x}%`,
+                top: `${item.pos.y}%`,
+              }}
+              animate={{
+                y: [0, -15, 0],
+                opacity: [0.3, 0.7, 0.3],
+                rotate: [0, 5, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random(),
+                repeat: Infinity,
+                delay: item.delay,
+              }}
+            >
+              {item.Icon}
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Content */}
+            <div className="lg:w-3/5 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="inline-block px-6 py-3 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-500/30 mb-8"
+              >
+                <span className="text-teal-400 font-medium text-sm sm:text-base">Let's Connect</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+              >
+                Get In{' '}
+                <span className="bg-gradient-to-r from-primary via-teal-400 to-blue-400 bg-clip-text text-transparent">
+                  Touch
+                </span>
+              </motion.h1>
+              
+              <motion.div 
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="h-1 w-32 bg-gradient-to-r from-primary to-teal-400 mb-8 mx-auto lg:mx-0"
+              ></motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-xl sm:text-2xl text-gray-200 mb-8 leading-relaxed"
+              >
+                Ready to discuss your project? We'd love to hear from you. 
+                Let's turn your ideas into reality together.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+              >
+                <Button 
+                  variant="primary" 
+                  className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300"
+                >
+                  Start Conversation
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  className="px-10 py-4 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
+                >
+                  View FAQ
+                </Button>
+              </motion.div>
+
+              {/* Contact Quick Links */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+                className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0"
+              >
+                {[
+                  { label: 'Email Us', value: 'slythosit.official@gmail.com', icon: '📧' },
+                  { label: 'Quick Response', value: '< 24 hours', icon: '⚡' },
+                  { label: 'Available', value: '24/7 Support', icon: '🌟' }
+                ].map((item, index) => (
+                  <motion.div 
+                    key={index}
+                    className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 text-center"
+                    whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <div className="text-white text-sm font-medium">{item.label}</div>
+                    <div className="text-gray-400 text-xs">{item.value}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Contact Form Preview */}
+            <div className="lg:w-2/5">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                  <div className="space-y-6">
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold text-white mb-2">Quick Contact</h3>
+                      <div className="h-1 w-16 bg-primary mx-auto"></div>
+                    </div>
+                    
+                    {/* Form Preview */}
+                    <div className="space-y-4">
+                      <motion.div 
+                        className="bg-white/5 rounded-lg p-3 border border-white/10"
+                        whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+                      >
+                        <div className="h-2 bg-gray-600 rounded mb-2"></div>
+                        <div className="h-2 bg-gray-700 rounded w-3/4"></div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white/5 rounded-lg p-3 border border-white/10"
+                        whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+                      >
+                        <div className="h-2 bg-gray-600 rounded mb-2"></div>
+                        <div className="h-2 bg-gray-700 rounded w-1/2"></div>
+                      </motion.div>
+                      <motion.div 
+                        className="bg-white/5 rounded-lg p-3 border border-white/10 h-20"
+                        whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+                      >
+                        <div className="h-2 bg-gray-600 rounded mb-2"></div>
+                        <div className="space-y-1">
+                          <div className="h-1 bg-gray-700 rounded"></div>
+                          <div className="h-1 bg-gray-700 rounded w-4/5"></div>
+                          <div className="h-1 bg-gray-700 rounded w-2/3"></div>
+                        </div>
+                      </motion.div>
+                      <motion.button
+                        className="w-full bg-gradient-to-r from-primary to-teal-500 rounded-lg py-3 text-white font-medium"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Send Message
+                      </motion.button>
+                    </div>
+
+                    {/* Response Time Indicator */}
+                    <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
+                      <motion.div
+                        className="w-2 h-2 bg-green-400 rounded-full"
+                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      <span>Typically responds within 24 hours</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Floating decorative elements */}
+                <motion.div
+                  className="absolute -top-6 -right-6 w-24 h-24 bg-teal-500/20 rounded-full blur-xl"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                ></motion.div>
+                <motion.div
+                  className="absolute -bottom-6 -left-6 w-20 h-20 bg-primary/20 rounded-full blur-lg"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                ></motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center text-white/70">
+            <span className="text-sm mb-2 hidden sm:block">Start your project</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+            >
+              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Contact Information Section */}

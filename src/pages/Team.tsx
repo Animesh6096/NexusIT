@@ -134,23 +134,180 @@ const TeamPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-16 sm:py-20 md:py-24 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">Our Team</h1>
-            <div className="h-1 w-16 sm:w-20 lg:w-24 bg-primary mb-4 sm:mb-6 lg:mb-8"></div>
-            <p className="text-sm sm:text-base lg:text-xl text-gray-200">
-              Meet the talented individuals behind SLYTHOS IT's success. 
-              Our diverse team brings together expertise from various fields 
-              to deliver exceptional solutions.
-            </p>
-          </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 overflow-hidden">
+        {/* Team Connection Lines Background */}
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 1200 800">
+            {[...Array(8)].map((_, i) => (
+              <motion.line
+                key={i}
+                x1={Math.random() * 1200}
+                y1={Math.random() * 800}
+                x2={Math.random() * 1200}
+                y2={Math.random() * 800}
+                stroke="currentColor"
+                strokeWidth="1"
+                className="text-white/30"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 3, delay: i * 0.3, repeat: Infinity, repeatType: "reverse" }}
+              />
+            ))}
+            {[...Array(12)].map((_, i) => (
+              <motion.circle
+                key={i}
+                cx={Math.random() * 1200}
+                cy={Math.random() * 800}
+                r="4"
+                fill="currentColor"
+                className="text-primary/60"
+                animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }}
+                transition={{ duration: 2 + Math.random(), repeat: Infinity, delay: Math.random() * 2 }}
+              />
+            ))}
+          </svg>
         </div>
+
+        {/* Floating Avatar Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-16 h-16 bg-gradient-to-br from-primary/20 to-green-500/20 rounded-full border border-white/20 backdrop-blur-sm"
+              style={{
+                left: `${10 + Math.random() * 80}%`,
+                top: `${10 + Math.random() * 80}%`,
+              }}
+              animate={{
+                y: [0, -20, 0],
+                x: [0, 10, 0],
+                rotate: [0, 5, 0],
+              }}
+              transition={{
+                duration: 4 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            >
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center">
+                <div className="w-8 h-8 bg-primary/40 rounded-full"></div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-block px-6 py-3 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-8"
+            >
+              <span className="text-green-400 font-medium text-sm sm:text-base">Meet Our Team</span>
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+            >
+              The Minds Behind{' '}
+              <span className="bg-gradient-to-r from-primary via-green-400 to-blue-400 bg-clip-text text-transparent">
+                SLYTHOS IT
+              </span>
+            </motion.h1>
+            
+            <motion.div 
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="h-1 w-32 bg-gradient-to-r from-primary to-green-400 mb-8 mx-auto"
+            ></motion.div>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-xl sm:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto"
+            >
+              Meet the talented individuals who bring expertise from diverse fields 
+              to deliver exceptional solutions and drive SLYTHOS IT's success.
+            </motion.p>
+
+            {/* Team Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto"
+            >
+              {[
+                { number: '10+', label: 'Team Members', color: 'primary' },
+                { number: '5+', label: 'Departments', color: 'green-500' },
+                { number: '15+', label: 'Years Combined', color: 'blue-500' },
+                { number: '100%', label: 'Dedication', color: 'purple-500' }
+              ].map((stat, index) => (
+                <motion.div 
+                  key={index}
+                  className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 group`}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div 
+                    className={`w-12 h-12 bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 rounded-xl mx-auto mb-4 flex items-center justify-center`}
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className={`w-6 h-6 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-lg`}></div>
+                  </motion.div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-300 text-sm">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button 
+                variant="primary" 
+                className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300 shadow-lg"
+              >
+                Meet the Team
+              </Button>
+              <Button 
+                variant="secondary" 
+                className="px-10 py-4 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
+              >
+                Join Our Team
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center text-white/70">
+            <span className="text-sm mb-2 hidden sm:block">Meet our people</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+            >
+              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Team Members Section */}

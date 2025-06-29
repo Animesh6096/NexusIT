@@ -11,35 +11,172 @@ const AboutPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 to-blue-900 py-20 md:py-32 lg:py-40 overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 max-w-3xl">
-              <motion.h1
-                initial={{ opacity: 0, y: -20 }}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-bounce"></div>
+        </div>
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            ></div>
+          ))}
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Content */}
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6"
+                className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-6"
               >
-                About SLYTHOS IT
+                <span className="text-primary font-medium text-sm sm:text-base">About Our Company</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              >
+                About{' '}
+                <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                  SLYTHOS IT
+                </span>
               </motion.h1>
+              
               <motion.div 
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: "80px" }}
-                transition={{ duration: 1 }}
-                className="h-1 bg-primary mb-4 md:mb-8 md:w-[100px]"
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="h-1 w-24 bg-gradient-to-r from-primary to-blue-400 mb-8 mx-auto lg:mx-0"
               ></motion.div>
+              
               <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-base sm:text-lg md:text-xl text-gray-200"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed"
               >
-                Building the future of digital experiences through innovative software solutions.
+                Building the future of digital experiences through innovative software solutions. 
+                We transform ideas into powerful digital realities.
               </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Button 
+                  variant="primary" 
+                  className="px-8 py-3 text-lg hover:scale-105 transition-transform duration-300"
+                >
+                  Our Story
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  className="px-8 py-3 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
+                >
+                  Meet the Team
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* Visual Element */}
+            <div className="lg:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                  <div className="grid grid-cols-2 gap-6">
+                    <motion.div 
+                      className="bg-primary/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-primary/30"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="text-3xl font-bold text-white mb-2">50+</div>
+                      <div className="text-gray-300 text-sm">Projects Completed</div>
+                    </motion.div>
+                    <motion.div 
+                      className="bg-blue-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-blue-500/30"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="text-3xl font-bold text-white mb-2">3+</div>
+                      <div className="text-gray-300 text-sm">Years Experience</div>
+                    </motion.div>
+                    <motion.div 
+                      className="bg-purple-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-500/30"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="text-3xl font-bold text-white mb-2">20+</div>
+                      <div className="text-gray-300 text-sm">Happy Clients</div>
+                    </motion.div>
+                    <motion.div 
+                      className="bg-green-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-green-500/30"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                      <div className="text-gray-300 text-sm">Support</div>
+                    </motion.div>
+                  </div>
+                </div>
+                
+                {/* Floating decorative elements */}
+                <motion.div
+                  className="absolute -top-4 -right-4 w-20 h-20 bg-primary/30 rounded-full blur-xl"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                ></motion.div>
+                <motion.div
+                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/30 rounded-full blur-lg"
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity }}
+                ></motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center text-white/70">
+            <span className="text-sm mb-2 hidden sm:block">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+            >
+              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Our Story */}

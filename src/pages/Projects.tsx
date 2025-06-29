@@ -144,22 +144,183 @@ const ProjectsPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-16 md:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 md:mb-4">Our Projects</h1>
-            <div className="h-1 w-16 md:w-24 bg-primary mb-4 md:mb-8"></div>
-            <p className="text-base sm:text-lg md:text-xl text-gray-200">
-              Showcasing our innovative solutions across various industries.
-              From web and mobile applications to AI-powered systems.
-            </p>
-          </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 overflow-hidden">
+        {/* Dynamic Background Pattern */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 opacity-30">
+            {[...Array(50)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-white rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  opacity: [0.3, 1, 0.3],
+                  scale: [1, 1.5, 1],
+                }}
+                transition={{
+                  duration: 3 + Math.random() * 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 3,
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Gradient Orbs */}
+          <div className="absolute top-1/4 left-1/5 w-72 h-72 bg-gradient-to-r from-primary/20 to-blue-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/5 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
         </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Content */}
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-6"
+              >
+                <span className="text-primary font-medium text-sm sm:text-base">Our Portfolio</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              >
+                Innovative{' '}
+                <span className="bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+                  Projects
+                </span>
+              </motion.h1>
+              
+              <motion.div 
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="h-1 w-24 bg-gradient-to-r from-primary to-purple-400 mb-8 mx-auto lg:mx-0"
+              ></motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed"
+              >
+                Showcasing our innovative solutions across various industries. 
+                From web applications to AI-powered systems that drive real results.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Button 
+                  variant="primary" 
+                  className="px-8 py-3 text-lg hover:scale-105 transition-transform duration-300"
+                >
+                  View All Projects
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  className="px-8 py-3 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
+                >
+                  Case Studies
+                </Button>
+              </motion.div>
+            </div>
+
+            {/* Project Preview Cards */}
+            <div className="lg:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="relative"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { title: 'FinSecure Platform', category: 'Web Development', color: 'primary' },
+                    { title: 'MediTrack App', category: 'Mobile App', color: 'blue-500' },
+                    { title: 'EcoMarket Store', category: 'E-commerce', color: 'green-500' },
+                    { title: 'LearnQuest LMS', category: 'SaaS Platform', color: 'purple-500' }
+                  ].map((project, index) => (
+                    <motion.div 
+                      key={index}
+                      className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 group cursor-pointer`}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      transition={{ duration: 0.3 }}
+                      animate={{ 
+                        y: [0, -10, 0],
+                      }}
+                      style={{ 
+                        animationDuration: `${3 + index * 0.5}s`,
+                        animationDelay: `${index * 0.3}s`
+                      }}
+                    >
+                      <div className={`w-12 h-12 bg-${project.color}/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-${project.color}/30 transition-colors`}>
+                        <div className={`w-6 h-6 bg-${project.color === 'primary' ? 'primary' : project.color} rounded-md`}></div>
+                      </div>
+                      <h3 className="text-white font-semibold text-lg mb-2">{project.title}</h3>
+                      <p className="text-gray-300 text-sm">{project.category}</p>
+                      <motion.div
+                        className="mt-4 w-full h-1 bg-gray-600 rounded-full overflow-hidden"
+                        initial={{ width: 0 }}
+                        animate={{ width: '100%' }}
+                        transition={{ duration: 2, delay: index * 0.2 + 1 }}
+                      >
+                        <motion.div
+                          className={`h-full bg-${project.color === 'primary' ? 'primary' : project.color}`}
+                          initial={{ width: 0 }}
+                          animate={{ width: `${75 + Math.random() * 25}%` }}
+                          transition={{ duration: 1.5, delay: index * 0.3 + 1.5 }}
+                        />
+                      </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                {/* Floating decorative elements */}
+                <motion.div
+                  className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-xl"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                ></motion.div>
+                <motion.div
+                  className="absolute -bottom-6 -left-6 w-20 h-20 bg-purple-500/20 rounded-full blur-lg"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                ></motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center text-white/70">
+            <span className="text-sm mb-2 hidden sm:block">Explore projects</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+            >
+              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Filter Section */}
