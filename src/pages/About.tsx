@@ -92,7 +92,7 @@ const AboutPage = () => {
       </section>
 
       {/* Vision, Mission & Values */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      <section className="py-20 bg-gray-50 dark:bg-slate-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <motion.h2
@@ -177,61 +177,180 @@ const AboutPage = () => {
             </motion.div>
           </div>
 
-          {/* Core Values Detail */}
-          <div className="max-w-4xl mx-auto">
+          {/* Our Goals Section */}
+          <div className="max-w-7xl mx-auto">
             <motion.h3 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeIn}
               transition={{ duration: 0.6 }}
-              className="text-2xl font-bold text-center mb-12"
+              className="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-gray-100"
             >
-              Core Values That Drive Us
+              OUR GOALS
             </motion.h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  value: "Excellence",
-                  description: "We strive for excellence in everything we do, setting high standards and constantly improving our work."
-                },
-                {
-                  value: "Integrity",
-                  description: "We act with honesty and transparency, building trust with our clients and within our team."
-                },
-                {
-                  value: "Innovation",
-                  description: "We embrace creative thinking and stay at the cutting edge of technology to deliver forward-thinking solutions."
-                },
-                {
-                  value: "Collaboration",
-                  description: "We believe that the best results come from teamwork, open communication, and diverse perspectives."
-                },
-                {
-                  value: "Client-centricity",
-                  description: "We put our clients' needs first, focusing on building solutions that create real value for their businesses."
-                }
-              ].map((item, index) => (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Left Column */}
+              <div className="space-y-12">
+                {/* Operational Excellence */}
                 <motion.div 
-                  key={item.value}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeIn}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 flex"
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="flex items-start space-x-6"
                 >
-                  <div className="flex-shrink-0 mr-4">
-                    <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
-                      {index + 1}
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-primary dark:border-blue-400 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">{item.value}</h4>
-                    <p className="text-gray-700 dark:text-gray-300">{item.description}</p>
+                    <h4 className="text-2xl font-bold text-gray-800 dark:text-blue-300 mb-4">Operational Excellence</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                      <li>• Automate 70% of repetitive tasks using AIOps by 2025.</li>
+                      <li>• Reduce carbon footprint by 25% via green data center initiatives.</li>
+                      <li>• Attain 99.9% uptime for core services.</li>
+                    </ul>
                   </div>
                 </motion.div>
-              ))}
+
+                {/* Talent & Culture */}
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeIn}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="flex items-start space-x-6"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-primary dark:border-blue-400 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-gray-800 dark:text-blue-300 mb-4">Talent & Culture</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                      <li>• Upskill 100% of engineers in GenAI and edge computing by 2026.</li>
+                      <li>• Double male leadership in tech roles by 2027.</li>
+                      <li>• Maintain a 4.8/5 employee satisfaction score through innovation sprints.</li>
+                    </ul>
+                  </div>
+                </motion.div>
+
+                {/* Market Expansion */}
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeIn}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="flex items-start space-x-6"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-primary dark:border-blue-400 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-gray-800 dark:text-blue-300 mb-4">Market Expansion</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                      <li>• Enter 3 new verticals (Healthcare, Smart Cities, FinTech) by 2025.</li>
+                      <li>• Grow recurring revenue to 60% of total income.</li>
+                      <li>• Partner with 5+ global tech giants (AWS, NVIDIA, etc.).</li>
+                    </ul>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-12">
+                {/* Technological Leadership */}
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeIn}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="flex items-start space-x-6"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-primary dark:border-blue-400 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-gray-800 dark:text-blue-300 mb-4">Technological Leadership</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                      <li>• Develop 3+ proprietary AI/ML tools for enterprise automation by 2026.</li>
+                      <li>• Achieve 100% cloud-native solutions across all products by 2025.</li>
+                      <li>• Pioneer a quantum computing R&D lab by 2027.</li>
+                    </ul>
+                  </div>
+                </motion.div>
+
+                {/* Client Success */}
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeIn}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="flex items-start space-x-6"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-primary dark:border-blue-400 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-gray-800 dark:text-blue-300 mb-4">Client Success</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                      <li>• Maintain 95%+ client retention through SLA-driven support.</li>
+                      <li>• Deliver 30% faster project timelines via agile DevOps pipelines.</li>
+                      <li>• Launch a client education portal with 50+ tech certifications by 2025.</li>
+                    </ul>
+                  </div>
+                </motion.div>
+
+                {/* Security & Compliance */}
+                <motion.div 
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeIn}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="flex items-start space-x-6"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 dark:bg-gray-700 border-2 border-primary dark:border-blue-400 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-2xl font-bold text-gray-800 dark:text-blue-300 mb-4">Security & Compliance</h4>
+                    <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                      <li>• Achieve ISO 27001 and SOC 2 compliance for all solutions by 2024.</li>
+                      <li>• Reduce critical vulnerabilities by 40% through zero-trust architecture.</li>
+                      <li>• Conduct bi-annual security drills for clients and internal teams.</li>
+                    </ul>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
