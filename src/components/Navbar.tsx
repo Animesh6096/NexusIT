@@ -67,13 +67,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 min-w-0">
             <Link to="/" onClick={handleNavClick} className="flex items-center">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
+                className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent truncate"
               >
                 SLYTHOS IT
               </motion.div>
@@ -82,31 +82,27 @@ const Navbar = () => {
 
           {/* Desktop Navigation - keeping it centered */}
           <div className="hidden md:flex flex-1 justify-center">
-            <div className="flex items-center space-x-4">
-              <nav className="hidden md:flex flex-1 justify-center">
-                <ul className="flex space-x-8">
-                  {navItems.map((item) => (
-                    <li key={item.name}>
-                      <NavLink
-                        to={item.path}
-                        onClick={handleNavClick}
-                        className={({ isActive }: { isActive: boolean }) =>
-                          `text-base font-medium transition-all duration-300 ${
-                            isActive
-                              ? 'text-primary border-b-2 border-primary pb-1'
-                              : scrolled
-                              ? 'text-gray-700 dark:text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
-                              : 'text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
-                          }`
-                        }
-                      >
-                        {item.name}
-                      </NavLink>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </div>
+            <ul className="flex space-x-8">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <NavLink
+                    to={item.path}
+                    onClick={handleNavClick}
+                    className={({ isActive }: { isActive: boolean }) =>
+                      `text-base font-medium transition-all duration-300 ${
+                        isActive
+                          ? 'text-primary border-b-2 border-primary pb-1'
+                          : scrolled
+                          ? 'text-gray-700 dark:text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
+                          : 'text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
+                      }`
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Dark Mode Toggle - separate from navigation */}
@@ -115,11 +111,11 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button and toggle */}
-          <div className="flex md:hidden items-center space-x-2 sm:space-x-4">
+          <div className="flex md:hidden items-center space-x-1 sm:space-x-2">
             <DarkModeToggle />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-1.5 sm:p-2 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="inline-flex items-center justify-center p-1 sm:p-1.5 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ml-1 sm:ml-2"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >

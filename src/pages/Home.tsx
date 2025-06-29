@@ -220,11 +220,11 @@ const Home = () => {
             aria-label="Scroll down"
             whileHover={{ y: -2 }}
           >
-            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium">Discover More</span>
+            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium text-center whitespace-nowrap">Discover More</span>
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center"
+              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center items-start"
             >
               <motion.div
                 animate={{ y: [0, 8, 0] }}
