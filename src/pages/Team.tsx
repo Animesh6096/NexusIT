@@ -86,7 +86,7 @@ const developmentTeam: TeamMember[] = [
     image: "https://media.licdn.com/dms/image/v2/D5603AQHV_Z1QcpCJ5g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709321865707?e=1756944000&v=beta&t=WSJI_WGx8NsGuArcOBQ8d_mXUY4-zYT2_f9Ix_dl2a8",
     bio: "Lead backend developer with expertise in scalable server architecture and database design.",
     socials: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/hasan-sarwar-zami-b150302a4/",
       github: "#"
     }
   },
@@ -96,7 +96,7 @@ const developmentTeam: TeamMember[] = [
     image: "https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/490295859_2131399120623706_5498561025883927298_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGNwjU_ZDstO1fiZzZ9MQLWg5Ol3oHZyuCDk6XegdnK4N5pOvOrvybSLztP2S_ZRKE1LoOTifwnO8yjRGQ7fLyr&_nc_ohc=TF3ckBdUon4Q7kNvwE2ELpN&_nc_oc=AdnSmd2rAsvDI_c6h3htUSYly5XmAaEFUJIeMi76C-LhUlvH0cDPPWMAB0B7NaVH6WggEBEP5EWDF0Px0_yxC-IQ&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&_nc_gid=8TAESkCdGMfPd0UkWKelFQ&oh=00_AfOzecPQFR3gzXcaLauhyt15vQv-yga73cw_vpC48WkC8g&oe=686778E4",
     bio: "Backend developer focused on building robust and efficient server-side applications.",
     socials: {
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/anit-paul-625174335/",
       github: "#"
     }
   }
@@ -109,8 +109,8 @@ const qualityAssuranceTeam: TeamMember[] = [
     image: "https://media.licdn.com/dms/image/v2/D5603AQHzv_uLI72XKQ/profile-displayphoto-shrink_800_800/B56ZVw8OHXHoAc-/0/1741356592228?e=1756944000&v=beta&t=AUAgWZ-VA2x0QyCSzi-xtSEbnnuobwE7rA4erzDFWkY",
     bio: "QA team lead ensuring the highest quality standards in all our software products.",
     socials: {
-      linkedin: "#",
-      github: "#"
+      linkedin: "https://www.linkedin.com/in/md-rezwanur-rahman-933045278?",
+      github: "https://github.com/md-rezwanur-rahman"
     }
   },
   {
