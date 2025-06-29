@@ -31,7 +31,7 @@ const Button = ({
   const variantStyles = {
     primary: 'bg-primary border-primary text-white hover:bg-primary/90 hover:text-white shadow-lg hover:shadow-xl',
     secondary: 'bg-secondary border-secondary text-white hover:bg-secondary/90 hover:text-white shadow-md hover:shadow-lg',
-    outline: 'bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary hover:border-primary transition-all duration-300'
+    outline: 'bg-transparent border-2 border-gray-300 dark:border-white text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white hover:text-gray-900 dark:hover:text-primary hover:border-gray-400 dark:hover:border-primary transition-all duration-300'
   }
   
   // Size styles

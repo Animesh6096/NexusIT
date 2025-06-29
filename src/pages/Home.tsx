@@ -76,7 +76,7 @@ const Home = () => {
                 <Button to="/contact" size="lg">
                   Get in Touch
                 </Button>
-                <Button to="/projects" variant="outline" size="lg">
+                <Button to="/projects" variant="outline" size="lg" className="!border-white !text-white hover:!bg-white hover:!text-primary hover:!border-white">
                   View Our Work
                 </Button>
               </motion.div>
@@ -187,7 +187,7 @@ const Home = () => {
                 <Button to="/about" variant="secondary" className="shadow-lg hover:shadow-xl transition-shadow">
                   Learn More About Us
                 </Button>
-                <Button to="/contact" variant="outline" className="group border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary">
+                <Button to="/contact" variant="outline" className="group !border-primary !text-primary hover:!bg-primary hover:!text-white">
                   <span>Get In Touch</span>
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
