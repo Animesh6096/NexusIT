@@ -167,13 +167,13 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="grid grid-cols-2 gap-6"
               >
-                <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
                   <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Projects Completed</div>
+                  <div className="text-sm text-gray-700 dark:text-gray-300 font-medium">Projects Completed</div>
                 </div>
-                <div className="text-center p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
                   <div className="text-3xl font-bold text-primary mb-2">10+</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+                  <div className="text-sm text-gray-700 dark:text-gray-300 font-medium">Team Members</div>
                 </div>
               </motion.div>
 
@@ -182,12 +182,12 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-col sm:flex-row gap-4"
               >
                 <Button to="/about" variant="secondary" className="shadow-lg hover:shadow-xl transition-shadow">
                   Learn More About Us
                 </Button>
-                <Button to="/contact" variant="outline" className="group">
+                <Button to="/contact" variant="outline" className="group border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary">
                   <span>Get In Touch</span>
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
