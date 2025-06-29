@@ -59,7 +59,7 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-white mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {['Home', 'About', 'Projects', 'Team', 'Careers'].map((item) => (
+              {['Home', 'About', 'Services', 'Projects', 'Team', 'Careers'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={`/${item === 'Home' ? '' : item.toLowerCase()}`}
@@ -83,11 +83,16 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
             <ul className="space-y-3">
               {[
-                'Web Development',
-                'Mobile Apps',
+                'Web Development (E-Commerce)',
+                'Software Integration',
+                'Cybersecurity Solutions',
+                'App Development',
+                'Networking Solutions',
                 'UI/UX Design',
-                'AI Solutions',
-                'Cloud Services'
+                'Software Quality Assurance',
+                'Software Maintenance',
+                'Data Science & Analytics',
+                'Machine Learning & AI'
               ].map((service) => (
                 <li key={service} className="text-gray-300 hover:text-primary hover:font-medium transition-colors duration-300">
                   {service}

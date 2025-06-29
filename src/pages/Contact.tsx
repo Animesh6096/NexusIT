@@ -372,7 +372,7 @@ const ContactPage = () => {
             {[
               {
                 question: 'What services does NexusIT offer?',
-                answer: 'NexusIT offers a comprehensive range of software development services including web development, mobile app development, UI/UX design, cloud solutions, and custom software development tailored to your business needs.'
+                answer: 'NexusIT offers a comprehensive range of software development services including web development (e-commerce), software integration, cybersecurity solutions, app development, networking solutions, UI/UX design, software quality assurance, software maintenance, data science & analytics, and machine learning & AI tailored to your business needs.'
               },
               {
                 question: 'How long does a typical project take to complete?',
