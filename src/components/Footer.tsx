@@ -51,43 +51,43 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="relative z-10">
         {/* Main Footer Links */}
-        <div className="py-20">
+        <div className="py-12 sm:py-16 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12"
             >
               {/* Company Info */}
-              <motion.div variants={slideIn} className="lg:col-span-1">
-                <Link to="/" className="inline-block mb-6">
+              <motion.div variants={slideIn} className="col-span-2 lg:col-span-1">
+                <Link to="/" className="inline-block mb-3 sm:mb-4 lg:mb-6">
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
-                    className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
+                    className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
                   >
                     NexusIT
                   </motion.div>
                 </Link>
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-gray-300 mb-3 sm:mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">
                   Transforming businesses through innovative software solutions. We bridge the gap between technology and success.
                 </p>
                 
                 {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
-                    <div className="text-2xl font-bold text-primary mb-1">50+</div>
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 mb-3 sm:mb-4 lg:mb-6">
+                  <div className="text-center p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10">
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mb-1">50+</div>
                     <div className="text-xs text-gray-400">Projects</div>
                   </div>
-                  <div className="text-center p-3 bg-white/5 rounded-lg border border-white/10">
-                    <div className="text-2xl font-bold text-primary mb-1">98%</div>
+                  <div className="text-center p-2 sm:p-3 bg-white/5 rounded-lg border border-white/10">
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary mb-1">98%</div>
                     <div className="text-xs text-gray-400">Success Rate</div>
                   </div>
                 </div>
 
                 {/* Social Links */}
-                <div className="flex space-x-4">
+                <div className="flex space-x-3 sm:space-x-4">
                   {[
                     { href: "https://twitter.com", icon: "M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84", label: "Twitter" },
                     { href: "https://github.com", icon: "M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z", label: "GitHub" },
@@ -98,12 +98,10 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2, y: -2 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary/20 transition-all duration-300 border border-white/10 hover:border-primary/30"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-lg flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary transition-all duration-300"
                     >
-                      <span className="sr-only">{social.label}</span>
-                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path d={social.icon} />
                       </svg>
                     </motion.a>
@@ -111,172 +109,165 @@ const Footer = () => {
                 </div>
               </motion.div>
 
-              {/* Quick Links */}
+              {/* Services */}
               <motion.div variants={slideIn}>
-                <h3 className="text-xl font-semibold text-white mb-6 relative">
-                  Quick Links
-                  <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary to-blue-400"></div>
-                </h3>
-                <ul className="space-y-4">
-                  {['Home', 'About', 'Services', 'Projects', 'Team', 'Careers'].map((item, index) => (
-                    <motion.li 
-                      key={item}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Services</h3>
+                <ul className="space-y-2 sm:space-y-3">
+                  {[
+                    { name: "Web Development", href: "/services" },
+                    { name: "Mobile Apps", href: "/services" },
+                    { name: "UI/UX Design", href: "/services" },
+                    { name: "Cybersecurity", href: "/services" },
+                    { name: "AI & ML", href: "/services" }
+                  ].map((service) => (
+                    <li key={service.name}>
                       <Link 
-                        to={`/${item === 'Home' ? '' : item.toLowerCase()}`}
-                        className="text-gray-300 hover:text-primary transition-all duration-300 flex items-center group"
+                        to={service.href} 
+                        className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
                       >
-                        <svg className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                        {item}
+                        <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                        {service.name}
                       </Link>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </motion.div>
 
-              {/* Services */}
+              {/* Quick Links */}
               <motion.div variants={slideIn}>
-                <h3 className="text-xl font-semibold text-white mb-6 relative">
-                  Core Services
-                  <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary to-blue-400"></div>
-                </h3>
-                <ul className="space-y-3">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Quick Links</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   {[
-                    'Web Development',
-                    'Software Integration',
-                    'Cybersecurity',
-                    'App Development',
-                    'AI & Machine Learning',
-                    'Data Analytics'
-                  ].map((service, index) => (
-                    <motion.li 
-                      key={service}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="text-gray-300 hover:text-primary transition-colors duration-300 cursor-pointer"
-                    >
-                      {service}
-                    </motion.li>
+                    { name: "About Us", href: "/about" },
+                    { name: "Our Team", href: "/team" },
+                    { name: "Projects", href: "/projects" },
+                    { name: "Careers", href: "/careers" },
+                    { name: "Contact", href: "/contact" }
+                  ].map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        to={link.href} 
+                        className="text-xs sm:text-sm text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
+                      >
+                        <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                        {link.name}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
-
-                {/* Newsletter */}
-                <div className="mt-8 p-4 bg-white/5 rounded-lg border border-white/10">
-                  <h4 className="text-sm font-semibold text-white mb-2">Stay Updated</h4>
-                  <p className="text-xs text-gray-400 mb-3">Get the latest tech insights</p>
-                  <div className="flex">
-                    <input 
-                      type="email" 
-                      placeholder="Your email"
-                      className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded-l-md text-white placeholder-gray-400 text-sm focus:outline-none focus:border-primary"
-                    />
-                    <button className="px-4 py-2 bg-primary hover:bg-primary/80 rounded-r-md transition-colors duration-300">
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
               </motion.div>
 
               {/* Contact Info */}
               <motion.div variants={slideIn}>
-                <h3 className="text-xl font-semibold text-white mb-6 relative">
-                  Get In Touch
-                  <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-primary to-blue-400"></div>
-                </h3>
-                <address className="not-italic space-y-4">
-                  {[
-                    { 
-                      icon: "M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z", 
-                      text: "Merul Badda, Dhaka, Bangladesh" 
-                    },
-                    { 
-                      icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z", 
-                      text: "nexusit.official@gmail.com" 
-                    },
-                    { 
-                      icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z", 
-                      text: "+880 178 183 6541" 
-                    }
-                  ].map((contact, index) => (
-                    <motion.div
-                      key={contact.text}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors duration-300"
-                    >
-                      <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={contact.icon} />
-                        </svg>
-                      </div>
-                      <span className="text-gray-300">{contact.text}</span>
-                    </motion.div>
-                  ))}
-                </address>
-
-                {/* Office Hours */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-blue-600/10 rounded-lg border border-primary/20">
-                  <h4 className="text-sm font-semibold text-white mb-2 flex items-center">
-                    <svg className="w-4 h-4 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Get in Touch</h3>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    Office Hours
-                  </h4>
-                  <p className="text-xs text-gray-300">Mon - Fri: 9:00 AM - 6:00 PM</p>
-                  <p className="text-xs text-gray-300">Weekend: On-call Support</p>
+                    <div>
+                      <p className="text-xs sm:text-sm text-gray-300">Email</p>
+                      <a href="mailto:contact@nexusit.com" className="text-xs sm:text-sm text-white hover:text-primary transition-colors duration-300">
+                        contact@nexusit.com
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <div>
+                      <p className="text-xs sm:text-sm text-gray-300">Phone</p>
+                      <a href="tel:+1234567890" className="text-xs sm:text-sm text-white hover:text-primary transition-colors duration-300">
+                        +1 (234) 567-8900
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <div>
+                      <p className="text-xs sm:text-sm text-gray-300">Address</p>
+                      <p className="text-xs sm:text-sm text-white">
+                        123 Tech Street<br />
+                        Innovation City, IC 12345
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
           </div>
         </div>
 
+        {/* Newsletter Section */}
+        <div className="border-t border-white/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl mx-auto text-center"
+            >
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">Stay Connected</h3>
+              <p className="text-xs sm:text-sm text-gray-300 mb-4 sm:mb-6">
+                Get the latest updates on technology trends and our services
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                />
+                <button className="px-4 sm:px-6 py-2 sm:py-3 bg-primary hover:bg-primary/80 text-white rounded-lg font-medium text-sm transition-all duration-300 flex items-center justify-center">
+                  <span>Subscribe</span>
+                  <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="border-t border-gray-700/50 py-8"
-        >
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+        <div className="border-t border-white/10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+            <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="text-gray-400 text-sm mb-4 md:mb-0"
+                transition={{ duration: 0.8 }}
+                className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-0"
               >
-                © {currentYear} NexusIT. All rights reserved. Built with ❤️ in Bangladesh.
+                © {currentYear} NexusIT. All rights reserved. Crafted with passion for innovation.
               </motion.p>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="flex space-x-6 text-sm"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6"
               >
-                {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-                  <a key={item} href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                    {item}
-                  </a>
-                ))}
+                <Link to="/privacy" className="text-xs sm:text-sm text-gray-400 hover:text-primary transition-colors duration-300">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms" className="text-xs sm:text-sm text-gray-400 hover:text-primary transition-colors duration-300">
+                  Terms of Service
+                </Link>
+                <Link to="/cookies" className="text-xs sm:text-sm text-gray-400 hover:text-primary transition-colors duration-300">
+                  Cookie Policy
+                </Link>
               </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

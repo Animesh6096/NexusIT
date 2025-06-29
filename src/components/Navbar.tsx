@@ -119,8 +119,9 @@ const Navbar = () => {
             <DarkModeToggle />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none"
-              aria-expanded="false"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
               <span className="sr-only">Open main menu</span>
               <svg

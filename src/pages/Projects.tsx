@@ -144,7 +144,7 @@ const ProjectsPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-24 md:py-32">
+      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-16 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -152,9 +152,9 @@ const ProjectsPage = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Projects</h1>
-            <div className="h-1 w-24 bg-primary mb-8"></div>
-            <p className="text-xl text-gray-200">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 md:mb-4">Our Projects</h1>
+            <div className="h-1 w-16 md:w-24 bg-primary mb-4 md:mb-8"></div>
+            <p className="text-base sm:text-lg md:text-xl text-gray-200">
               Showcasing our innovative solutions across various industries.
               From web and mobile applications to AI-powered systems.
             </p>
@@ -163,15 +163,15 @@ const ProjectsPage = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="py-10 bg-white dark:bg-gray-900">
+      <section className="py-6 md:py-10 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center mb-8">
-            <div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg inline-flex flex-wrap gap-2 justify-center shadow-sm">
+          <div className="flex flex-wrap justify-center mb-6 md:mb-8">
+            <div className="bg-gray-100 dark:bg-gray-800 p-1.5 md:p-2 rounded-lg inline-flex flex-wrap gap-1.5 md:gap-2 justify-center shadow-sm">
               {categories.map(category => (
                 <button
                   key={category}
                   onClick={() => handleFilterClick(category)}
-                  className={`px-5 py-2.5 rounded-md text-sm font-medium transition-all duration-300 ${
+                  className={`px-3 py-1.5 md:px-5 md:py-2.5 rounded-md text-xs md:text-sm font-medium transition-all duration-300 ${
                     activeFilter === category
                       ? 'bg-primary text-white shadow-md'
                       : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 shadow'
@@ -186,13 +186,13 @@ const ProjectsPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-10 bg-white dark:bg-gray-900">
+      <section className="py-6 md:py-10 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
           >
             <AnimatePresence>
               {filteredProjects.map(project => (
@@ -206,32 +206,32 @@ const ProjectsPage = () => {
                   onClick={() => setSelectedProject(project)}
                   className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer group"
                 >
-                  <div className="relative overflow-hidden h-64">
+                  <div className="relative overflow-hidden h-48 md:h-64">
                     <img 
                       src={project.image} 
                       alt={project.title} 
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <div className="flex flex-wrap gap-2 mb-2">
+                      <div className="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4">
+                        <div className="flex flex-wrap gap-1 md:gap-2 mb-1 md:mb-2">
                           {project.tags.map(tag => (
-                            <span key={tag} className="text-xs bg-primary/80 text-white px-2 py-1 rounded">
+                            <span key={tag} className="text-xs bg-primary/80 text-white px-1.5 md:px-2 py-0.5 md:py-1 rounded">
                               {tag}
                             </span>
                           ))}
                         </div>
-                        <p className="text-sm text-white/90 line-clamp-2">{project.description}</p>
+                        <p className="text-xs md:text-sm text-white/90 line-clamp-2">{project.description}</p>
                       </div>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary transition-colors">
+                  <div className="p-3 md:p-5">
+                    <h3 className="text-base md:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-500 dark:text-gray-400">{project.category}</span>
-                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100">{project.year}</span>
+                      <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{project.category}</span>
+                      <span className="text-xs md:text-sm font-medium text-gray-900 dark:text-gray-100">{project.year}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -240,8 +240,8 @@ const ProjectsPage = () => {
           </motion.div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-16">
-              <h3 className="text-xl text-gray-600 dark:text-gray-300">No projects found in this category.</h3>
+            <div className="text-center py-12 md:py-16">
+              <h3 className="text-lg md:text-xl text-gray-600 dark:text-gray-300">No projects found in this category.</h3>
               <Button 
                 onClick={() => handleFilterClick('All')} 
                 variant="secondary" 
@@ -271,40 +271,40 @@ const ProjectsPage = () => {
               className="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               onClick={e => e.stopPropagation()}
             >
-              <div className="relative h-72 md:h-96">
+              <div className="relative h-64 md:h-96">
                 <img 
                   src={selectedProject.image} 
                   alt={selectedProject.title} 
                   className="w-full h-full object-cover"
                 />
                 <button 
-                  className="absolute top-4 right-4 h-10 w-10 rounded-full bg-black/70 text-white flex items-center justify-center"
+                  className="absolute top-4 right-4 h-8 w-8 md:h-10 md:w-10 rounded-full bg-black/70 text-white flex items-center justify-center"
                   onClick={() => setSelectedProject(null)}
                 >
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
+              <div className="p-4 md:p-6">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
                   {selectedProject.tags.map(tag => (
-                    <span key={tag} className="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">
+                    <span key={tag} className="text-xs md:text-sm bg-primary/10 text-primary px-2 md:px-3 py-0.5 md:py-1 rounded-full">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">{selectedProject.title}</h2>
-                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">{selectedProject.description}</p>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 md:mb-3">{selectedProject.title}</h2>
+                <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-4 md:mb-6">{selectedProject.description}</p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="grid grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
                   <div>
-                    <h4 className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Client</h4>
-                    <p className="text-gray-900 dark:text-gray-100">{selectedProject.client}</p>
+                    <h4 className="text-xs md:text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1 md:mb-2">Client</h4>
+                    <p className="text-sm md:text-base text-gray-900 dark:text-gray-100">{selectedProject.client}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">Year</h4>
-                    <p className="text-gray-900 dark:text-gray-100">{selectedProject.year}</p>
+                    <h4 className="text-xs md:text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1 md:mb-2">Year</h4>
+                    <p className="text-sm md:text-base text-gray-900 dark:text-gray-100">{selectedProject.year}</p>
                   </div>
                 </div>
                 
@@ -320,7 +320,7 @@ const ProjectsPage = () => {
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-100 dark:bg-gray-800">
+      <section className="py-12 md:py-20 bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
@@ -328,7 +328,7 @@ const ProjectsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6"
             >
               Ready to Build Something Amazing?
             </motion.h2>
@@ -337,7 +337,7 @@ const ProjectsPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-700 dark:text-gray-300 mb-10"
+              className="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-6 md:mb-10"
             >
               Let's turn your vision into reality with our experienced team and cutting-edge technology.
             </motion.p>

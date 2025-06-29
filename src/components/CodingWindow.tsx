@@ -16,12 +16,12 @@ class NexusITApp {
   }
 
   deploy() {
-    console.log('🚀 Deploying EXORIT Web App...');
+    console.log('🚀 Deploying NexusIT Web App...');
     return 'Success';
   }
 }
 
-const app = new ExoritApp();
+const app = new NexusITApp();
 app.deploy();`;
 
   useEffect(() => {
@@ -67,7 +67,7 @@ app.deploy();`;
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
-        <div className="mx-auto text-gray-400 text-sm font-mono">exoritApp.ts</div>
+        <div className="mx-auto text-gray-400 text-sm font-mono">NexusIT_App.ts</div>
       </div>
       
       {/* Code Content */}

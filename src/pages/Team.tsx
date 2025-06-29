@@ -134,7 +134,7 @@ const TeamPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-24 md:py-32">
+      <section className="bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -142,9 +142,9 @@ const TeamPage = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Team</h1>
-            <div className="h-1 w-24 bg-primary mb-8"></div>
-            <p className="text-xl text-gray-200">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">Our Team</h1>
+            <div className="h-1 w-16 sm:w-20 lg:w-24 bg-primary mb-4 sm:mb-6 lg:mb-8"></div>
+            <p className="text-sm sm:text-base lg:text-xl text-gray-200">
               Meet the talented individuals behind NexusIT's success. 
               Our diverse team brings together expertise from various fields 
               to deliver exceptional solutions.
@@ -154,17 +154,17 @@ const TeamPage = () => {
       </section>
 
       {/* Team Members Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Management Team */}
-          <div className="mb-20">
-            <div className="text-center mb-16">
+          <div className="mb-12 sm:mb-16 lg:mb-20">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4"
               >
                 Management Team
               </motion.h2>
@@ -173,7 +173,7 @@ const TeamPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+                className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               >
                 Our management team brings strategic vision and leadership to guide NexusIT towards continued excellence and innovation.
               </motion.p>
@@ -184,7 +184,7 @@ const TeamPage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+              className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-10"
             >
               {managementTeam.map((member) => (
                 <motion.div
@@ -192,36 +192,36 @@ const TeamPage = () => {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative overflow-hidden h-80">
+                  <div className="relative overflow-hidden h-48 sm:h-60 lg:h-80">
                     <img 
                       src={member.image} 
                       alt={member.name} 
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 sm:p-4 flex justify-center space-x-2 sm:space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {member.socials.facebook && (
                         <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-600">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
                           </svg>
                         </a>
                       )}
                       <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-600">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
                       <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-900">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
                         </svg>
                       </a>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">{member.role}</p>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300">{member.bio}</p>
+                  <div className="p-3 sm:p-4 lg:p-6">
+                    <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-gray-100 mb-1 sm:mb-2 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 lg:mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">{member.role}</p>
+                    <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mb-2 sm:mb-3 lg:mb-4 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 line-clamp-3">{member.bio}</p>
                   </div>
                 </motion.div>
               ))}
@@ -229,14 +229,14 @@ const TeamPage = () => {
           </div>
 
           {/* Development Team */}
-          <div className="mb-20">
-            <div className="text-center mb-16">
+          <div className="mb-12 sm:mb-16 lg:mb-20">
+            <div className="text-center mb-8 sm:mb-12 lg:mb-16">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4"
               >
                 Development Team
               </motion.h2>
@@ -245,7 +245,7 @@ const TeamPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+                className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               >
                 Our skilled developers bring technical expertise and innovation to create cutting-edge solutions.
               </motion.p>
@@ -256,7 +256,7 @@ const TeamPage = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+              className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-10"
             >
               {developmentTeam.map((member) => (
                 <motion.div
@@ -264,36 +264,36 @@ const TeamPage = () => {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative overflow-hidden h-80">
+                  <div className="relative overflow-hidden h-48 sm:h-60 lg:h-80">
                     <img 
                       src={member.image} 
                       alt={member.name} 
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 sm:p-4 flex justify-center space-x-2 sm:space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {member.socials.facebook && (
                         <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-600">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
                           </svg>
                         </a>
                       )}
                       <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-600">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
                       <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-900">
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
                         </svg>
                       </a>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">{member.role}</p>
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300">{member.bio}</p>
+                  <div className="p-3 sm:p-4 lg:p-6">
+                    <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 dark:text-gray-100 mb-1 sm:mb-2 group-hover:text-primary transition-colors duration-300">{member.name}</h3>
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 dark:text-gray-300 mb-2 sm:mb-3 lg:mb-4 group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-300">{member.role}</p>
+                    <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 mb-2 sm:mb-3 lg:mb-4 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors duration-300 line-clamp-3">{member.bio}</p>
                   </div>
                 </motion.div>
               ))}
