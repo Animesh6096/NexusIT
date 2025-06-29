@@ -76,11 +76,11 @@ const Footer = () => {
                 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3 sm:mb-4">
-                  <div className="text-center p-2 sm:p-3 bg-white/70 dark:bg-white/5 rounded-lg border border-gray-300 dark:border-white/5">
+                  <div className="text-center p-2 sm:p-3 bg-white/70 dark:bg-white/10 rounded-lg border border-gray-300 dark:border-white/10">
                     <div className="text-lg sm:text-xl font-bold text-primary mb-1">50+</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">Projects</div>
                   </div>
-                  <div className="text-center p-2 sm:p-3 bg-white/70 dark:bg-white/5 rounded-lg border border-gray-300 dark:border-white/5">
+                  <div className="text-center p-2 sm:p-3 bg-white/70 dark:bg-white/10 rounded-lg border border-gray-300 dark:border-white/10">
                     <div className="text-lg sm:text-xl font-bold text-primary mb-1">98%</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">Success Rate</div>
                   </div>
@@ -159,59 +159,41 @@ const Footer = () => {
 
               {/* Contact Info */}
               <motion.div variants={slideIn}>
-                <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Get in Touch</h3>
-                <div className="space-y-3">
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mt-0.5">
-                      <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Email</p>
-                      <a href="mailto:contact@nexusit.com" className="text-sm text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-300 break-all">
+                <h3 className="text-base font-bold text-gray-800 dark:text-white mb-3">Get in Touch</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
+                      <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                      <span className="text-gray-500 dark:text-gray-400 mr-2">Email:</span>
+                      <a href="mailto:contact@nexusit.com" className="hover:text-primary transition-colors duration-300">
                         contact@nexusit.com
                       </a>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mt-0.5">
-                      <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Phone</p>
-                      <a href="tel:+1234567890" className="text-sm text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-300">
+                  </li>
+                  <li>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group">
+                      <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                      <span className="text-gray-500 dark:text-gray-400 mr-2">Phone:</span>
+                      <a href="tel:+1234567890" className="hover:text-primary transition-colors duration-300">
                         +1 (234) 567-8900
                       </a>
                     </div>
-                  </div>
-                  
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center mt-0.5">
-                      <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
+                  </li>
+                  <li>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 flex items-center group">
+                      <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                      <span className="text-gray-500 dark:text-gray-400 mr-2">Address:</span>
+                      <span>Merul Badda, Dhaka, Bangladesh</span>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Address</p>
-                      <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
-                        123 Tech Street<br />
-                        Innovation City, IC 12345
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </motion.div>
             </motion.div>
           </div>
         </div>
 
         {/* Newsletter Section */}
-        <div className="border-t border-gray-200/50 dark:border-white/5">
+        <div className="border-t border-gray-200/50 dark:border-white/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -228,7 +210,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 bg-white/70 dark:bg-white/5 border border-gray-300 dark:border-white/5 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
+                  className="flex-1 px-3 py-2 bg-white/70 dark:bg-white/10 border border-gray-300 dark:border-white/10 rounded-lg text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-300"
                 />
                 <button className="px-4 py-2 bg-primary hover:bg-primary/80 text-white rounded-lg font-medium text-sm transition-all duration-300 flex items-center justify-center">
                   <span>Subscribe</span>
@@ -242,7 +224,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200/50 dark:border-white/5">
+        <div className="border-t border-gray-200/50 dark:border-white/10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
               <motion.p
