@@ -79,7 +79,7 @@ const TeamPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Team</h1>
             <div className="h-1 w-24 bg-primary mb-8"></div>
             <p className="text-xl text-gray-200">
-              Meet the talented individuals behind EXORIT's success. 
+              Meet the talented individuals behind NexusIT's success. 
               Our diverse team brings together expertise from various fields 
               to deliver exceptional solutions.
             </p>
@@ -108,7 +108,7 @@ const TeamPage = () => {
               className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
             >
               Our leadership team brings decades of combined experience in software development,
-              design, and business management to guide EXORIT towards continued excellence and innovation.
+              design, and business management to guide NexusIT towards continued excellence and innovation.
             </motion.p>
           </div>
 
@@ -176,7 +176,7 @@ const TeamPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">Our Company Culture</h2>
               <div className="h-1 w-20 bg-primary mb-8"></div>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                At EXORIT, we believe that great products come from great teams. We foster a culture of 
+                At NexusIT, we believe that great products come from great teams. We foster a culture of 
                 collaboration, innovation, and continuous learning that empowers our team members to do 
                 their best work and grow professionally.
               </p>
@@ -225,22 +225,22 @@ const TeamPage = () => {
               <div className="grid grid-cols-2 gap-4">
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
-                  alt="EXORIT team collaboration" 
+                  alt="NexusIT team collaboration" 
                   className="rounded-lg h-48 md:h-64 w-full object-cover shadow-md transform hover:scale-105 transition-transform duration-300"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
-                  alt="EXORIT office" 
+                  alt="NexusIT office" 
                   className="rounded-lg h-48 md:h-64 w-full object-cover shadow-md transform hover:scale-105 transition-transform duration-300 mt-8"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                  alt="EXORIT team event" 
+                  alt="NexusIT team event" 
                   className="rounded-lg h-48 md:h-64 w-full object-cover shadow-md transform hover:scale-105 transition-transform duration-300 -mt-8"
                 />
                 <img 
                   src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                  alt="EXORIT workspace" 
+                  alt="NexusIT workspace" 
                   className="rounded-lg h-48 md:h-64 w-full object-cover shadow-md transform hover:scale-105 transition-transform duration-300"
                 />
               </div>

@@ -88,7 +88,7 @@ const ContactPage = () => {
             {[
               {
                 title: 'Email Us',
-                info: 'exorit.official@gmail.com',
+                info: 'nexusit.official@gmail.com',
                 description: 'For general inquiries',
                 icon: (
                   <svg className="h-12 w-12 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -371,8 +371,8 @@ const ContactPage = () => {
           <div className="max-w-3xl mx-auto">
             {[
               {
-                question: 'What services does EXORIT offer?',
-                answer: 'EXORIT offers a comprehensive range of software development services including web development, mobile app development, UI/UX design, cloud solutions, and custom software development tailored to your business needs.'
+                question: 'What services does NexusIT offer?',
+                answer: 'NexusIT offers a comprehensive range of software development services including web development, mobile app development, UI/UX design, cloud solutions, and custom software development tailored to your business needs.'
               },
               {
                 question: 'How long does a typical project take to complete?',

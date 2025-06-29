@@ -22,7 +22,7 @@ const Footer = () => {
             className="col-span-1 md:col-span-1"
           >
             <div className="flex flex-col items-center">
-              <Link to="/" className="text-2xl font-bold text-white mb-4">EXORIT</Link>
+              <Link to="/" className="text-2xl font-bold text-white mb-4">NexusIT</Link>
               <p className="text-gray-300 text-center">
                 Creating innovative software solutions for businesses worldwide.
               </p>
@@ -117,7 +117,7 @@ const Footer = () => {
                 <svg className="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span>exorit.official@gmail.com</span>
+                <span>nexusit.official@gmail.com</span>
               </p>
               <p className="flex items-start space-x-3 text-gray-300">
                 <svg className="h-6 w-6 text-primary flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,7 +131,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} EXORIT. All rights reserved.
+            © {currentYear} NexusIT. All rights reserved.
           </p>
         </div>
       </div>

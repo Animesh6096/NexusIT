@@ -21,7 +21,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl md:text-5xl font-bold text-white mb-6"
               >
-                About EXORIT
+                About NexusIT
               </motion.h1>
               <motion.div 
                 initial={{ opacity: 0, width: 0 }}
@@ -57,7 +57,7 @@ const AboutPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">Our Story</h2>
               <div className="h-1 w-20 bg-primary mb-8"></div>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                Founded in 2015, EXORIT started as a small team of passionate developers with a shared vision: 
+                Founded in 2015, NexusIT started as a small team of passionate developers with a shared vision: 
                 to make cutting-edge technology accessible to businesses of all sizes. What began as a boutique 
                 development shop has grown into a comprehensive software company serving clients worldwide.
               </p>
@@ -68,7 +68,7 @@ const AboutPage = () => {
                 modernize their digital infrastructure.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Today, EXORIT continues to push the boundaries of what's possible in software development, 
+                Today, NexusIT continues to push the boundaries of what's possible in software development, 
                 combining technical excellence with creative thinking to craft solutions that address 
                 real-world challenges.
               </p>
@@ -83,7 +83,7 @@ const AboutPage = () => {
             >
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="EXORIT team in discussion" 
+                alt="NexusIT team in discussion" 
                 className="rounded-lg shadow-xl w-full"
               />
             </motion.div>
@@ -171,7 +171,7 @@ const AboutPage = () => {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Our Values</h3>
               <p className="text-gray-700 dark:text-gray-300">
-                Excellence, integrity, innovation, collaboration, and client-centricity guide everything we do at EXORIT, 
+                Excellence, integrity, innovation, collaboration, and client-centricity guide everything we do at NexusIT, 
                 shaping how we approach our work and build relationships.
               </p>
             </motion.div>

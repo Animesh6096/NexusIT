@@ -5,8 +5,8 @@ import { useTheme } from '../contexts/ThemeContext';
 const CodingWindow = () => {
   const [text, setText] = useState('');
   const { darkMode } = useTheme();
-  const codeSnippet = `// EXORIT Web Solutions
-class ExoritApp {
+  const codeSnippet = `// NexusIT Web Solutions
+class NexusITApp {
   constructor() {
     this.stack = {
       frontend: 'React & Tailwind',

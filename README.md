@@ -1,7 +1,7 @@
 
-# EXORIT Website
+# NexusIT Website
 
-A modern, responsive company website for EXORIT, built with React, TypeScript, Vite, and Tailwind CSS.
+A modern, responsive company website for NexusIT, built with React, TypeScript, Vite, and Tailwind CSS.
 
 ## Features
 
@@ -23,7 +23,7 @@ A modern, responsive company website for EXORIT, built with React, TypeScript, V
 ### Installation
 
 ```bash
-cd exorit-website
+cd nexusit-website
 npm install
 # or
 yarn install
@@ -58,7 +58,7 @@ yarn lint
 ## Project Structure
 
 ```
-exorit-website/
+nexusit-website/
   ├── public/           # Static assets
   ├── src/              # Source code
   │   ├── components/   # Reusable React components

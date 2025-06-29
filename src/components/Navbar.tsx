@@ -70,7 +70,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" onClick={handleNavClick} className="flex items-center">
-              <img src="/images/logo.svg" alt="EXORIT Logo" className="h-10" />
+              <img src="/images/logo.svg" alt="NexusIT Logo" className="h-10" />
             </Link>
           </div>
 

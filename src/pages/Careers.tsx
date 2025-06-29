@@ -201,7 +201,7 @@ const CareersPage = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Join Our Team</h1>
             <div className="h-1 w-24 bg-primary mb-8"></div>
             <p className="text-xl text-gray-200">
-              Explore current opportunities at EXORIT and become part of a team that's 
+              Explore current opportunities at NexusIT and become part of a team that's 
               building innovative solutions for the future.
             </p>
           </motion.div>
@@ -219,7 +219,7 @@ const CareersPage = () => {
               transition={{ duration: 0.8 }}
               className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
             >
-              Why Join EXORIT?
+              Why Join NexusIT?
             </motion.h2>
             <motion.div 
               initial={{ opacity: 0, width: 0 }}
