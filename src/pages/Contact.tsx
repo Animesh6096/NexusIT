@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Button from '../components/Button'
+import { useScrollToSection } from '../hooks/useScrollToSection'
 
 const ContactPage = () => {
+  const scrollToSection = useScrollToSection()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -222,16 +224,18 @@ const ContactPage = () => {
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
               >
                 <Button 
+                  onClick={() => scrollToSection('contact-form')}
                   variant="primary" 
                   className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300"
                 >
                   Start Conversation
                 </Button>
                 <Button 
+                  to="/services"
                   variant="secondary" 
                   className="px-10 py-4 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
                 >
-                  View FAQ
+                  Our Services
                 </Button>
               </motion.div>
 
@@ -418,7 +422,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-10 md:py-16 bg-gray-50 dark:bg-gray-800">
+      <section id="contact-form" className="py-10 md:py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <motion.div 

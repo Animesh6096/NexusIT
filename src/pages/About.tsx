@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import Button from '../components/Button'
+import { useScrollToSection } from '../hooks/useScrollToSection'
 
 const AboutPage = () => {
+  const scrollToSection = useScrollToSection()
+  
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -84,12 +87,14 @@ const AboutPage = () => {
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
                 <Button 
+                  onClick={() => scrollToSection('our-story')}
                   variant="primary" 
                   className="px-8 py-3 text-lg hover:scale-105 transition-transform duration-300"
                 >
                   Our Story
                 </Button>
                 <Button 
+                  to="/team"
                   variant="secondary" 
                   className="px-8 py-3 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
                 >
@@ -180,7 +185,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Story */}
-      <section className="py-12 md:py-20 bg-white dark:bg-gray-900">
+      <section id="our-story" className="py-12 md:py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center">
             <motion.div 

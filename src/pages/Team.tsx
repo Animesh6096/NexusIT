@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Button from '../components/Button'
+import { useScrollToSection } from '../hooks/useScrollToSection'
 
 interface TeamMember {
   name: string;
@@ -126,6 +127,8 @@ const qualityAssuranceTeam: TeamMember[] = [
 ];
 
 const TeamPage = () => {
+  const scrollToSection = useScrollToSection()
+  
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -287,12 +290,14 @@ const TeamPage = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <Button 
+                onClick={() => scrollToSection('team-members')}
                 variant="primary" 
                 className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300 shadow-lg"
               >
                 Meet the Team
               </Button>
               <Button 
+                to="/careers"
                 variant="secondary" 
                 className="px-10 py-4 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
               >
@@ -324,7 +329,7 @@ const TeamPage = () => {
       </section>
 
       {/* Team Members Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
+      <section id="team-members" className="py-12 sm:py-16 lg:py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Management Team */}
           <div className="mb-12 sm:mb-16 lg:mb-20">

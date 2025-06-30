@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../components/Button'
+import { useScrollToSection } from '../hooks/useScrollToSection'
 
 // Project data
 const projectsData = [
@@ -106,6 +107,7 @@ const projectsData = [
 ]
 
 const ProjectsPage = () => {
+  const scrollToSection = useScrollToSection()
   const categories = ['All', 'Web Development', 'Mobile App', 'SaaS', 'AI/ML']
   const [activeFilter, setActiveFilter] = useState('All')
   const [filteredProjects, setFilteredProjects] = useState(projectsData)
@@ -223,16 +225,18 @@ const ProjectsPage = () => {
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
                 <Button 
+                  onClick={() => scrollToSection('projects-grid')}
                   variant="primary" 
                   className="px-8 py-3 text-lg hover:scale-105 transition-transform duration-300"
                 >
                   View All Projects
                 </Button>
                 <Button 
+                  to="/contact"
                   variant="secondary" 
                   className="px-8 py-3 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
                 >
-                  Case Studies
+                  Discuss Your Project
                 </Button>
               </motion.div>
             </div>
@@ -347,7 +351,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-6 md:py-10 bg-white dark:bg-gray-900">
+      <section id="projects-grid" className="py-6 md:py-10 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             variants={containerVariants}

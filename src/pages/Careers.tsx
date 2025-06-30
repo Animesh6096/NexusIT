@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '../components/Button'
+import { useScrollToSection } from '../hooks/useScrollToSection'
 
 // Job listing data
 const jobListings = [
@@ -122,6 +123,7 @@ const jobListings = [
 ]
 
 const CareersPage = () => {
+  const scrollToSection = useScrollToSection()
   const [filter, setFilter] = useState('All Departments')
   const [selectedJob, setSelectedJob] = useState<null | number>(null)
   const [showForm, setShowForm] = useState(false)
@@ -311,12 +313,14 @@ const CareersPage = () => {
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
               >
                 <Button 
+                  onClick={() => scrollToSection('open-positions')}
                   variant="primary" 
                   className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300"
                 >
                   View Open Positions
                 </Button>
                 <Button 
+                  to="/about"
                   variant="secondary" 
                   className="px-10 py-4 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
                 >
@@ -548,7 +552,7 @@ const CareersPage = () => {
       </section>
 
       {/* Current Openings Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section id="open-positions" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2
