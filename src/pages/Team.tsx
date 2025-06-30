@@ -2,6 +2,11 @@ import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 
+// Import team images
+import defaultAvatar from '/team/default-avatar.jpg'
+import animeshPhoto from '/team/24141102_Animesh Bhattacharjee_Photo.jpg'
+import fuadPhoto from '/team/fuad.jpg'
+
 interface TeamMember {
   name: string;
   role: string;
@@ -22,7 +27,8 @@ const managementTeam: TeamMember[] = [
     image: "/team/sadat3.jpg",
     bio: "Strategic business analyst with expertise in market research and business process optimization.",
     socials: {
-      linkedin: "#",
+      facebook: "https://www.facebook.com/sprodhan78",
+      linkedin: "https://www.linkedin.com/in/sadat-sakib-prodhan-b6804721a/",
       github: "#"
     }
   },
@@ -74,9 +80,10 @@ const developmentTeam: TeamMember[] = [
   {
     name: "Md Sakibur Rahman",
     role: "Front-end Developer",
-    image: "/team/default-avatar.jpg",
+    image: "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/512544324_3746147742184716_4661196669346284031_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH4MMCW8CaXlEF0cParnH8JveHti3Iorui94e2Lciiu6ATSZ4mbUrfe3HSAw9G65kdbK-XAz56m8AiNGpq8PCBQ&_nc_ohc=rJFcgcm2CC8Q7kNvwFTsWtT&_nc_oc=AdlmcdKPpRdAVnwOCF3mwutKNfe7YaQ05XEVxN_pNrQ3Jm_nIQXj8wJ1ic0xI30_bFUhtnW-JZZHmVN0wOBBO6TC&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=uY_YBsld8BoonDyklaow2w&oh=00_AfNq4-nfFG7HkdbeDAUAhODzp0u82NE-lNuq03q0RmNLRQ&oe=6868E5B0",
     bio: "Frontend developer passionate about creating intuitive and engaging user interfaces.",
     socials: {
+      facebook: "https://www.facebook.com/sakiburrahman.akash",
       linkedin: "#",
       github: "#"
     }
@@ -97,6 +104,7 @@ const developmentTeam: TeamMember[] = [
     image: "https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/490295859_2131399120623706_5498561025883927298_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGNwjU_ZDstO1fiZzZ9MQLWg5Ol3oHZyuCDk6XegdnK4N5pOvOrvybSLztP2S_ZRKE1LoOTifwnO8yjRGQ7fLyr&_nc_ohc=TF3ckBdUon4Q7kNvwE2ELpN&_nc_oc=AdnSmd2rAsvDI_c6h3htUSYly5XmAaEFUJIeMi76C-LhUlvH0cDPPWMAB0B7NaVH6WggEBEP5EWDF0Px0_yxC-IQ&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&_nc_gid=8TAESkCdGMfPd0UkWKelFQ&oh=00_AfOzecPQFR3gzXcaLauhyt15vQv-yga73cw_vpC48WkC8g&oe=686778E4",
     bio: "Backend developer focused on building robust and efficient server-side applications.",
     socials: {
+      facebook: "https://www.facebook.com/dean.anit",
       linkedin: "https://www.linkedin.com/in/anit-paul-625174335/",
       github: "#"
     }
@@ -110,6 +118,7 @@ const qualityAssuranceTeam: TeamMember[] = [
     image: "https://media.licdn.com/dms/image/v2/D5603AQHzv_uLI72XKQ/profile-displayphoto-shrink_800_800/B56ZVw8OHXHoAc-/0/1741356592228?e=1756944000&v=beta&t=AUAgWZ-VA2x0QyCSzi-xtSEbnnuobwE7rA4erzDFWkY",
     bio: "QA team lead ensuring the highest quality standards in all our software products.",
     socials: {
+      facebook: "https://www.facebook.com/rayjan.bzs17",
       linkedin: "https://www.linkedin.com/in/md-rezwanur-rahman-933045278?",
       github: "https://github.com/md-rezwanur-rahman"
     }
@@ -120,11 +129,30 @@ const qualityAssuranceTeam: TeamMember[] = [
     image: "/team/sadat3.jpg",
     bio: "Quality assurance analyst with a keen eye for detail and comprehensive testing strategies.",
     socials: {
-      linkedin: "#",
+      facebook: "https://www.facebook.com/sprodhan78",
+      linkedin: "https://www.linkedin.com/in/sadat-sakib-prodhan-b6804721a/",
       github: "#"
     }
   }
 ];
+
+// Add image error handling component
+const TeamMemberImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    target.src = "/team/default-avatar.jpg";
+  };
+
+  return (
+    <img 
+      src={src} 
+      alt={alt} 
+      className={className}
+      onError={handleImageError}
+      loading="lazy"
+    />
+  );
+};
 
 const TeamPage = () => {
   const scrollToSection = useScrollToSection()
@@ -368,7 +396,7 @@ const TeamPage = () => {
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="relative overflow-hidden h-48 sm:h-60 lg:h-80">
-                    <img 
+                    <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
                       className="w-full h-full object-cover"
@@ -440,7 +468,7 @@ const TeamPage = () => {
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="relative overflow-hidden h-48 sm:h-60 lg:h-80">
-                    <img 
+                    <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
                       className="w-full h-full object-cover"
@@ -512,7 +540,7 @@ const TeamPage = () => {
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="relative overflow-hidden h-80">
-                    <img 
+                    <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
                       className="w-full h-full object-cover"
