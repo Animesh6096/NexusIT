@@ -94,6 +94,7 @@ const developmentTeam: TeamMember[] = [
     image: "https://media.licdn.com/dms/image/v2/D5603AQHV_Z1QcpCJ5g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709321865707?e=1756944000&v=beta&t=WSJI_WGx8NsGuArcOBQ8d_mXUY4-zYT2_f9Ix_dl2a8",
     bio: "Lead backend developer with expertise in scalable server architecture and database design.",
     socials: {
+      facebook: "https://www.facebook.com/hs.zami18",
       linkedin: "https://www.linkedin.com/in/hasan-sarwar-zami-b150302a4/",
       github: "#"
     }
