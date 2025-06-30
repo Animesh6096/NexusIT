@@ -212,11 +212,11 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+          className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-30 flex justify-center"
         >
           <motion.a 
             href="#about" 
-            className="flex flex-col items-center text-white/80 hover:text-white transition-colors group"
+            className="flex flex-col items-center justify-center text-white/80 hover:text-white transition-colors group"
             aria-label="Scroll down"
             whileHover={{ y: -2 }}
           >
@@ -224,7 +224,7 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center items-start"
+              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center items-start mx-auto"
             >
               <motion.div
                 animate={{ y: [0, 8, 0] }}
