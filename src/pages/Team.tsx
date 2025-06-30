@@ -64,7 +64,7 @@ const developmentTeam: TeamMember[] = [
   {
     name: "MD. Saadman Fuad",
     role: "Front-end Developer (Lead)",
-    image: "/team/default-avatar.jpg",
+    image: "/team/fuad.jpg",
     bio: "Lead frontend developer specializing in modern JavaScript frameworks and responsive design.",
     socials: {
       linkedin: "#",
