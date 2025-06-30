@@ -2,23 +2,6 @@ import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 
-// Import team images
-import defaultAvatar from '/team/default-avatar.jpg'
-import animeshPhoto from '/team/24141102_Animesh Bhattacharjee_Photo.jpg'
-import fuadPhoto from '/team/fuad.jpg'
-
-interface TeamMember {
-  name: string;
-  role: string;
-  image: string;
-  bio: string;
-  socials: {
-    facebook?: string;
-    linkedin: string;
-    github: string;
-  };
-}
-
 // Team member data organized by categories
 const managementTeam: TeamMember[] = [
   {
@@ -141,7 +124,8 @@ const qualityAssuranceTeam: TeamMember[] = [
 const TeamMemberImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
-    target.src = "/team/default-avatar.jpg";
+    // Use a generic placeholder or try a fallback image
+    target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='18' text-anchor='middle' dy='.3em' fill='%236b7280'%3ETeam Member%3C/text%3E%3C/svg%3E";
   };
 
   return (
