@@ -175,14 +175,14 @@ const ProjectsPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 pt-20 pb-8 sm:py-12 lg:py-16">
             {/* Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-6"
+                className="hidden sm:inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-6"
               >
                 <span className="text-primary font-medium text-sm sm:text-base">Our Portfolio</span>
               </motion.div>
@@ -311,7 +311,7 @@ const ProjectsPage = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-white/70">
-            <span className="text-sm mb-2 hidden sm:block">Explore projects</span>
+            <span className="text-sm mb-2 hidden md:block">Explore projects</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -353,7 +353,7 @@ const ProjectsPage = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 md:gap-8"
           >
             <AnimatePresence>
               {filteredProjects.map(project => (
@@ -365,9 +365,9 @@ const ProjectsPage = () => {
                   animate="visible"
                   exit={{ opacity: 0, y: 10 }}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer group"
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer group min-w-0"
                 >
-                  <div className="relative overflow-hidden h-48 md:h-64">
+                  <div className="relative overflow-hidden h-24 sm:h-48 md:h-64">
                     <img 
                       src={project.image} 
                       alt={project.title} 
@@ -386,13 +386,13 @@ const ProjectsPage = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="p-3 md:p-5">
-                    <h3 className="text-base md:text-xl font-bold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-primary transition-colors">
+                  <div className="p-1.5 sm:p-3 md:p-5">
+                    <h3 className="text-xs sm:text-base md:text-xl font-bold text-gray-900 dark:text-gray-100 mb-1 sm:mb-2 group-hover:text-primary transition-colors leading-tight break-words">
                       {project.title}
                     </h3>
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs md:text-sm text-gray-500 dark:text-gray-400">{project.category}</span>
-                      <span className="text-xs md:text-sm font-medium text-gray-900 dark:text-gray-100">{project.year}</span>
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="text-gray-500 dark:text-gray-400 truncate flex-1 mr-1">{project.category}</span>
+                      <span className="font-medium text-gray-900 dark:text-gray-100 flex-shrink-0">{project.year}</span>
                     </div>
                   </div>
                 </motion.div>

@@ -156,12 +156,13 @@ const ServicesPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
+          <div className="flex items-center justify-center min-h-screen pt-20 pb-8 sm:py-12 lg:py-16">
+            <div className="text-center max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-8"
+              className="hidden sm:inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-8"
             >
               <span className="text-primary font-medium text-sm sm:text-base">Our Services</span>
             </motion.div>
@@ -239,6 +240,7 @@ const ServicesPage = () => {
                 Get Quote
               </Button>
             </motion.div>
+            </div>
           </div>
         </div>
 
@@ -250,7 +252,7 @@ const ServicesPage = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-white/70">
-            <span className="text-sm mb-2 hidden sm:block">Discover our services</span>
+            <span className="text-sm mb-2 hidden md:block">Discover our services</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

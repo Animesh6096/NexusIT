@@ -174,14 +174,14 @@ const ContactPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 pt-20 pb-8 sm:py-12 lg:py-16">
             {/* Content */}
             <div className="lg:w-3/5 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="inline-block px-6 py-3 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-500/30 mb-8"
+                className="hidden sm:inline-block px-6 py-3 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-500/30 mb-8"
               >
                 <span className="text-teal-400 font-medium text-sm sm:text-base">Let's Connect</span>
               </motion.div>
@@ -348,7 +348,7 @@ const ContactPage = () => {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center text-white/70">
-            <span className="text-sm mb-2 hidden sm:block">Start your project</span>
+            <span className="text-sm mb-2 hidden md:block">Start your project</span>
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

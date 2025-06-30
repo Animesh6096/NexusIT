@@ -110,12 +110,12 @@ const Navbar = () => {
             <DarkModeToggle className="relative z-10" />
           </div>
 
-          {/* Mobile menu button and toggle */}
-          <div className="flex md:hidden items-center space-x-1 sm:space-x-2">
-            <DarkModeToggle />
+          {/* Mobile menu button */}
+          <div className="flex md:hidden items-center space-x-3">
+            <DarkModeToggle className="mr-1" />
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-1 sm:p-1.5 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ml-1 sm:ml-2"
+              className="inline-flex items-center justify-center p-1 sm:p-1.5 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
