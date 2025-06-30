@@ -19,7 +19,7 @@ const managementTeam: TeamMember[] = [
   {
     name: "Sadat Sakib Prodhan",
     role: "Business Analyst",
-    image: "public/team/sadat3.jpg",
+    image: "/team/sadat3.jpg",
     bio: "Strategic business analyst with expertise in market research and business process optimization.",
     socials: {
       linkedin: "#",
@@ -117,7 +117,7 @@ const qualityAssuranceTeam: TeamMember[] = [
   {
     name: "Sadat Sakib Prodhan",
     role: "QA Analyst",
-    image: "public/team/sadat3.jpg",
+    image: "/team/sadat3.jpg",
     bio: "Quality assurance analyst with a keen eye for detail and comprehensive testing strategies.",
     socials: {
       linkedin: "#",
