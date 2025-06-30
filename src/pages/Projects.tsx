@@ -245,7 +245,7 @@ const ProjectsPage = () => {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="relative"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-6">
                   {[
                     { title: 'FinSecure Platform', category: 'Web Development', color: 'primary' },
                     { title: 'MediTrack App', category: 'Mobile App', color: 'blue-500' },
@@ -254,7 +254,7 @@ const ProjectsPage = () => {
                   ].map((project, index) => (
                     <motion.div 
                       key={index}
-                      className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 group cursor-pointer`}
+                      className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-6 border border-white/20 group cursor-pointer`}
                       whileHover={{ scale: 1.05, y: -5 }}
                       transition={{ duration: 0.3 }}
                       animate={{ 
@@ -265,13 +265,13 @@ const ProjectsPage = () => {
                         animationDelay: `${index * 0.3}s`
                       }}
                     >
-                      <div className={`w-12 h-12 bg-${project.color}/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-${project.color}/30 transition-colors`}>
-                        <div className={`w-6 h-6 bg-${project.color === 'primary' ? 'primary' : project.color} rounded-md`}></div>
+                      <div className={`w-8 h-8 sm:w-12 sm:h-12 bg-${project.color}/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-4 group-hover:bg-${project.color}/30 transition-colors`}>
+                        <div className={`w-4 h-4 sm:w-6 sm:h-6 bg-${project.color === 'primary' ? 'primary' : project.color} rounded-sm sm:rounded-md`}></div>
                       </div>
-                      <h3 className="text-white font-semibold text-lg mb-2">{project.title}</h3>
-                      <p className="text-gray-300 text-sm">{project.category}</p>
+                      <h3 className="text-white font-semibold text-sm sm:text-lg mb-1 sm:mb-2 leading-tight">{project.title}</h3>
+                      <p className="text-gray-300 text-xs sm:text-sm">{project.category}</p>
                       <motion.div
-                        className="mt-4 w-full h-1 bg-gray-600 rounded-full overflow-hidden"
+                        className="mt-2 sm:mt-4 w-full h-1 bg-gray-600 rounded-full overflow-hidden"
                         initial={{ width: 0 }}
                         animate={{ width: '100%' }}
                         transition={{ duration: 2, delay: index * 0.2 + 1 }}
