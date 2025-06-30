@@ -2,6 +2,18 @@ import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 
+interface TeamMember {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  socials: {
+    facebook?: string;
+    linkedin: string;
+    github: string;
+  };
+}
+
 // Team member data organized by categories
 const managementTeam: TeamMember[] = [
   {
