@@ -15,9 +15,11 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Improved mobile touch targets */
+/* Improved mobile touch targets - but exclude dark mode toggle */
 @media (max-width: 768px) {
-  button, a, [role="button"] {
+  button:not([aria-label="Toggle dark mode"]), 
+  a:not([aria-label="Toggle dark mode"]), 
+  [role="button"]:not([aria-label="Toggle dark mode"]) {
     min-height: 44px;
     min-width: 44px;
   }
@@ -158,7 +160,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+button:not([aria-label="Toggle dark mode"]) {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -172,29 +174,31 @@ button {
   @apply dark:bg-gray-800;
 }
 
-button:hover {
+button:not([aria-label="Toggle dark mode"]):hover {
   border-color: #646cff;
   color: inherit;
   @apply dark:bg-gray-700;
   color: white !important; /* Ensure text remains visible on hover */
 }
 
-button:focus,
-button:focus-visible {
+button:not([aria-label="Toggle dark mode"]):focus,
+button:not([aria-label="Toggle dark mode"]):focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Special case for the dark mode toggle button */
-button.dark-mode-toggle {
-  background: transparent;
-  border: none;
-  padding: 0;
-  min-width: auto;
+/* Dark mode toggle should not be affected by global button styles */
+button[aria-label="Toggle dark mode"] {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  min-width: auto !important;
+  min-height: auto !important;
 }
 
-button.dark-mode-toggle:hover {
-  background: transparent;
-  border: none;
+button[aria-label="Toggle dark mode"]:hover {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
 }
 
 @media (prefers-color-scheme: light) {
@@ -211,22 +215,22 @@ button.dark-mode-toggle:hover {
     color: #646cff;
   }
   
-  button {
+  button:not([aria-label="Toggle dark mode"]) {
     background-color: #f9f9f9;
     color: #213547;
   }
   
-  button:hover {
+  button:not([aria-label="Toggle dark mode"]):hover {
     background-color: #e5e5e5;
     color: #213547;
   }
 }
 
-.dark button {
+.dark button:not([aria-label="Toggle dark mode"]) {
   @apply bg-gray-700;
 }
 
-.dark button:hover {
+.dark button:not([aria-label="Toggle dark mode"]):hover {
   @apply bg-gray-600 border-blue-400;
 }
 
