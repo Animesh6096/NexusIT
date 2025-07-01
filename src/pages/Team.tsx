@@ -6,6 +6,7 @@ import { useScrollToSection } from '../hooks/useScrollToSection'
 import sadatPhoto from '/team/sadat3.jpg'
 import animeshPhoto from '/team/24141102_Animesh Bhattacharjee_Photo.jpg'
 import fuadPhoto from '/team/fuad.jpg'
+import zamiPhoto from '/team/Zami.jpg'
 
 interface TeamMember {
   name: string;
@@ -91,7 +92,7 @@ const developmentTeam: TeamMember[] = [
   {
     name: "Hasan Sarwar Zami",
     role: "Back-end Developer (Lead)",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQHV_Z1QcpCJ5g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709321865707?e=1756944000&v=beta&t=WSJI_WGx8NsGuArcOBQ8d_mXUY4-zYT2_f9Ix_dl2a8",
+    image: zamiPhoto,
     bio: "Lead backend developer with expertise in scalable server architecture and database design.",
     socials: {
       facebook: "https://www.facebook.com/hs.zami18",
