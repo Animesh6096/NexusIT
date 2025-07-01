@@ -14,9 +14,9 @@ const DarkModeToggle: React.FC<DarkModeToggleProps> = ({ className = '' }) => {
       onClick={toggleDarkMode}
       className={`relative w-12 h-6 rounded-full flex items-center 
       transition-colors duration-300 ease-in-out
-      focus:outline-none bg-gray-400 dark:bg-gray-700
-      border border-gray-500 dark:border-gray-400
-      shadow-md hover:shadow-lg ${className}`}
+      focus:outline-none bg-gray-400/60 dark:bg-gray-600/60
+      border border-gray-500/70 dark:border-gray-400/70
+      shadow-sm hover:shadow-md backdrop-blur-sm ${className}`}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

@@ -42,7 +42,7 @@ html, body {
   outline-offset: 2px;
 }
 
-/* Remove focus outline for navigation links and buttons */
+/* Remove focus outline for navigation links and buttons but preserve other styling */
 .nav-link:focus,
 .nav-link:focus-visible,
 nav a:focus,
@@ -51,7 +51,7 @@ nav button:focus,
 nav button:focus-visible {
   outline: none !important;
   box-shadow: none !important;
-  border: none !important;
+  /* Don't remove borders/backgrounds - preserve component styling */
 }
 
 /* Remove focus outline for all buttons but keep accessibility with subtle shadow */
@@ -193,19 +193,61 @@ h1 {
 
 /* Dark mode toggle should not be affected by global button styles */
 button[aria-label="Toggle dark mode"] {
-  background: transparent !important;
-  border: none !important;
   padding: 0 !important;
   min-width: auto !important;
   min-height: auto !important;
   opacity: 1 !important;
+  /* Don't override background - let component handle it */
 }
 
-button[aria-label="Toggle dark mode"]:hover {
-  background: transparent !important;
-  border: none !important;
+button[aria-label="Toggle dark mode"]:hover,
+button[aria-label="Toggle dark mode"]:focus,
+button[aria-label="Toggle dark mode"]:active,
+button[aria-label="Toggle dark mode"]:focus-visible {
   color: inherit !important;
   opacity: 1 !important;
+  /* Don't use inherit for background - let specific rules handle it */
+  border: inherit !important;
+  /* Preserve component styling */
+}
+
+/* More specific rules to ensure toggle background never disappears */
+nav button[aria-label="Toggle dark mode"],
+header button[aria-label="Toggle dark mode"] {
+  background-color: rgba(156, 163, 175, 0.6) !important; /* fallback for light mode */
+  border: 1px solid rgba(107, 114, 128, 0.7) !important;
+}
+
+.dark nav button[aria-label="Toggle dark mode"],
+.dark header button[aria-label="Toggle dark mode"] {
+  background-color: rgba(75, 85, 99, 0.6) !important; /* fallback for dark mode */
+  border: 1px solid rgba(156, 163, 175, 0.7) !important;
+}
+
+/* Ensure the toggle background persists during all interactions in light mode */
+nav button[aria-label="Toggle dark mode"]:hover,
+nav button[aria-label="Toggle dark mode"]:focus,
+nav button[aria-label="Toggle dark mode"]:active,
+nav button[aria-label="Toggle dark mode"]:focus-visible,
+header button[aria-label="Toggle dark mode"]:hover,
+header button[aria-label="Toggle dark mode"]:focus,
+header button[aria-label="Toggle dark mode"]:active,
+header button[aria-label="Toggle dark mode"]:focus-visible {
+  background-color: rgba(156, 163, 175, 0.6) !important;
+  border: 1px solid rgba(107, 114, 128, 0.7) !important;
+}
+
+/* Ensure the toggle background persists during all interactions in dark mode */
+.dark nav button[aria-label="Toggle dark mode"]:hover,
+.dark nav button[aria-label="Toggle dark mode"]:focus,
+.dark nav button[aria-label="Toggle dark mode"]:active,
+.dark nav button[aria-label="Toggle dark mode"]:focus-visible,
+.dark header button[aria-label="Toggle dark mode"]:hover,
+.dark header button[aria-label="Toggle dark mode"]:focus,
+.dark header button[aria-label="Toggle dark mode"]:active,
+.dark header button[aria-label="Toggle dark mode"]:focus-visible {
+  background-color: rgba(75, 85, 99, 0.6) !important;
+  border: 1px solid rgba(156, 163, 175, 0.7) !important;
 }
 
 /* Ensure dark mode toggle container is visible */
@@ -313,12 +355,12 @@ button[aria-label="Toggle dark mode"] > div {
   }
 }
 
-/* Additional navigation button focus removal */
-nav button,
+/* Additional navigation button focus removal - but preserve component styling */
+nav button:not([aria-label="Toggle dark mode"]),
 nav a,
 .nav-link,
 [data-nav-link],
-header button,
+header button:not([aria-label="Toggle dark mode"]),
 header a {
   outline: none !important;
   -webkit-tap-highlight-color: transparent !important;
@@ -338,8 +380,22 @@ nav a:focus-visible,
 .nav-link:focus-visible {
   outline: none !important;
   box-shadow: none !important;
-  border: none !important;
-  background: none !important;
+  /* Don't remove borders - preserve underlines and styling */
+}
+
+/* Exception: Don't remove background from dark mode toggle - ensure it's always visible */
+nav button[aria-label="Toggle dark mode"]:focus,
+nav button[aria-label="Toggle dark mode"]:active,
+nav button[aria-label="Toggle dark mode"]:focus-visible {
+  background-color: rgba(156, 163, 175, 0.6) !important;
+  border: 1px solid rgba(107, 114, 128, 0.7) !important;
+}
+
+.dark nav button[aria-label="Toggle dark mode"]:focus,
+.dark nav button[aria-label="Toggle dark mode"]:active,
+.dark nav button[aria-label="Toggle dark mode"]:focus-visible {
+  background-color: rgba(75, 85, 99, 0.6) !important;
+  border: 1px solid rgba(156, 163, 175, 0.7) !important;
 }
 
 /* Remove any default browser focus styles for mobile */
