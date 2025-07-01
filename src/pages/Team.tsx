@@ -152,7 +152,6 @@ const TeamMemberImage = ({ src, alt, className }: { src: string; alt: string; cl
       alt={alt} 
       className={className}
       onError={handleImageError}
-      loading="lazy"
     />
   );
 };

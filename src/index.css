@@ -81,7 +81,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Reduce motion for users who prefer it */
+/* Reduced motion preferences respected but no forced loading delays */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

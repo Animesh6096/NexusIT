@@ -36,48 +36,6 @@ export const ErrorFallback = ({ error, resetError }: { error: Error; resetError:
   )
 }
 
-// Loading Skeleton Components
-export const SkeletonCard = () => (
-  <div className="animate-pulse bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
-    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-3"></div>
-    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-2"></div>
-    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-full mb-2"></div>
-    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
-  </div>
-)
-
-export const SkeletonGrid = ({ count = 6 }: { count?: number }) => (
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {Array.from({ length: count }).map((_, index) => (
-      <SkeletonCard key={index} />
-    ))}
-  </div>
-)
-
-// Enhanced Loading Component
-export const LoadingSpinner = ({ size = 'md', text }: { size?: 'sm' | 'md' | 'lg'; text?: string }) => {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12'
-  }
-
-  return (
-    <div className="flex flex-col items-center justify-center space-y-3">
-      <motion.div
-        className={`${sizeClasses[size]} border-2 border-primary border-t-transparent rounded-full`}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-      />
-      {text && (
-        <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
-          {text}
-        </p>
-      )}
-    </div>
-  )
-}
-
 // Offline Notice Component
 export const OfflineNotice = () => {
   const isOnline = useNetworkStatus()

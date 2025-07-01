@@ -37,21 +37,3 @@ export const getOptimizedImageUrl = (url: string, width: number, quality: number
   // For local images, return as-is (could be enhanced with image optimization service)
   return url
 }
-
-// Lazy loading intersection observer hook
-export const useLazyLoading = (callback: () => void) => {
-  const observer = useMemo(() => {
-    return new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            callback()
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-  }, [callback])
-
-  return observer
-}
