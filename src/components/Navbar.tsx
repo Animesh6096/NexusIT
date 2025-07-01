@@ -71,44 +71,35 @@ const Navbar = () => {
           {/* Mobile: Hamburger + Logo + Dark Mode Toggle */}
           <div className="flex md:hidden items-center justify-between w-full">
             {/* Hamburger menu button - left side */}
-            <button
+            <motion.button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-1 sm:p-1.5 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-0"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative inline-flex items-center justify-center p-2 rounded-lg bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 text-gray-700 dark:text-white hover:bg-white/20 dark:hover:bg-gray-700/40 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 shadow-sm"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
               <span className="sr-only">Open main menu</span>
-              <svg
-                className={`${isOpen ? 'hidden' : 'block'} h-5 w-5 sm:h-6 sm:w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
+              
+              {/* Animated hamburger lines */}
+              <div className="w-5 h-5 flex flex-col justify-center items-center">
+                <motion.span
+                  animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="block h-0.5 w-5 bg-current rounded-full"
                 />
-              </svg>
-              <svg
-                className={`${isOpen ? 'block' : 'hidden'} h-5 w-5 sm:h-6 sm:w-6`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
+                <motion.span
+                  animate={isOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="block h-0.5 w-5 bg-current rounded-full mt-1"
                 />
-              </svg>
-            </button>
+                <motion.span
+                  animate={isOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="block h-0.5 w-5 bg-current rounded-full mt-1"
+                />
+              </div>
+            </motion.button>
 
             {/* Logo - center */}
             <div className="flex-1 flex justify-center">
@@ -174,29 +165,46 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white dark:bg-gray-900 shadow-lg w-full"
+              initial={{ opacity: 0, height: 0, y: -20 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden absolute top-full left-0 right-0 mx-3 mt-2 backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/50 overflow-hidden"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {navItems.map((item) => (
-                  <NavLink
+              <div className="px-4 py-4 space-y-2">
+                {navItems.map((item, index) => (
+                  <motion.div
                     key={item.name}
-                    to={item.path}
-                    onClick={handleNavClick}
-                    className={({ isActive }: { isActive: boolean }) =>
-                      `nav-link block px-3 py-2 rounded-md text-base font-medium ${
-                        isActive
-                          ? 'text-primary bg-gray-50 dark:bg-gray-800'
-                          : 'text-gray-700 dark:text-white hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800'
-                      }`
-                    }
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    {item.name}
-                  </NavLink>
+                    <NavLink
+                      to={item.path}
+                      onClick={handleNavClick}
+                      className={({ isActive }: { isActive: boolean }) =>
+                        `nav-link block px-4 py-3 rounded-xl text-base font-medium transition-all duration-300 ${
+                          isActive
+                            ? 'text-white bg-gradient-to-r from-primary to-blue-400 shadow-lg transform scale-105'
+                            : 'text-gray-700 dark:text-white hover:text-primary hover:bg-white/50 dark:hover:bg-gray-800/50 hover:backdrop-blur-sm hover:shadow-md hover:transform hover:scale-105'
+                        }`
+                      }
+                    >
+                      {({ isActive }: { isActive: boolean }) => (
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            isActive ? 'bg-white' : 'bg-primary/60'
+                          }`}></div>
+                          <span>{item.name}</span>
+                        </div>
+                      )}
+                    </NavLink>
+                  </motion.div>
                 ))}
               </div>
+              
+              {/* Decorative bottom gradient */}
+              <div className="h-1 bg-gradient-to-r from-primary via-blue-400 to-primary opacity-50"></div>
             </motion.div>
           )}
         </AnimatePresence>
