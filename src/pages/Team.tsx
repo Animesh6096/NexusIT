@@ -2,6 +2,11 @@ import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 
+// Import local images to ensure they're bundled
+import sadatPhoto from '/team/sadat3.jpg'
+import animeshPhoto from '/team/24141102_Animesh Bhattacharjee_Photo.jpg'
+import fuadPhoto from '/team/fuad.jpg'
+
 interface TeamMember {
   name: string;
   role: string;
@@ -19,7 +24,7 @@ const managementTeam: TeamMember[] = [
   {
     name: "Sadat Sakib Prodhan",
     role: "Business Analyst",
-    image: "/team/sadat3.jpg",
+    image: sadatPhoto,
     bio: "Strategic business analyst with expertise in market research and business process optimization.",
     socials: {
       facebook: "https://www.facebook.com/sprodhan78",
@@ -40,7 +45,7 @@ const managementTeam: TeamMember[] = [
   {
     name: "Animesh Bhattacharjee",
     role: "Collaborator (Front-end & Back-end)",
-    image: "/team/24141102_Animesh Bhattacharjee_Photo.jpg",
+    image: animeshPhoto,
     bio: "Full-stack collaborator with expertise in both frontend and backend technologies.",
     socials: {
       facebook: "https://www.facebook.com/animesh.bhattacharjee.6096",
@@ -54,7 +59,7 @@ const developmentTeam: TeamMember[] = [
   {
     name: "Animesh Bhattacharjee",
     role: "Collaborator (Front-end & Back-end)",
-    image: "/team/24141102_Animesh Bhattacharjee_Photo.jpg",
+    image: animeshPhoto,
     bio: "Full-stack collaborator with expertise in both frontend and backend technologies.",
     socials: {
       facebook: "https://www.facebook.com/animesh.bhattacharjee.6096",
@@ -65,7 +70,7 @@ const developmentTeam: TeamMember[] = [
   {
     name: "MD. Saadman Fuad",
     role: "Front-end Developer (Lead)",
-    image: "/team/fuad.jpg",
+    image: fuadPhoto,
     bio: "Lead frontend developer specializing in modern JavaScript frameworks and responsive design.",
     socials: {
       linkedin: "#",
@@ -122,7 +127,7 @@ const qualityAssuranceTeam: TeamMember[] = [
   {
     name: "Sadat Sakib Prodhan",
     role: "QA Analyst",
-    image: "/team/sadat3.jpg",
+    image: sadatPhoto,
     bio: "Quality assurance analyst with a keen eye for detail and comprehensive testing strategies.",
     socials: {
       facebook: "https://www.facebook.com/sprodhan78",
@@ -136,8 +141,8 @@ const qualityAssuranceTeam: TeamMember[] = [
 const TeamMemberImage = ({ src, alt, className }: { src: string; alt: string; className: string }) => {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
-    // Use a generic placeholder or try a fallback image
-    target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' font-size='18' text-anchor='middle' dy='.3em' fill='%236b7280'%3ETeam Member%3C/text%3E%3C/svg%3E";
+    // Fallback to a more reliable placeholder
+    target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23f3f4f6'/%3E%3Ccircle cx='200' cy='160' r='50' fill='%236b7280'/%3E%3Cpath d='M120 300 Q200 250 280 300 L280 400 L120 400 Z' fill='%236b7280'/%3E%3C/svg%3E";
   };
 
   return (
