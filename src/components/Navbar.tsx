@@ -75,7 +75,11 @@ const Navbar = () => {
               onClick={toggleMenu}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative inline-flex items-center justify-center p-2 rounded-lg bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/50 text-gray-700 dark:text-white hover:bg-white/20 dark:hover:bg-gray-700/40 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 shadow-sm"
+              className={`relative inline-flex items-center justify-center p-2 focus:outline-none transition-all duration-300 ${
+                scrolled
+                  ? 'text-gray-600 dark:text-gray-300 hover:text-primary'
+                  : 'text-white/90 hover:text-white'
+              }`}
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
