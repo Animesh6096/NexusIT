@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import { useScrollToSection } from '../hooks/useScrollToSection'
 
-// Import local images to ensure they're bundled
-import sadatPhoto from '/team/sadat3.jpg'
-import animeshPhoto from '/team/24141102_Animesh Bhattacharjee_Photo.jpg'
-import fuadPhoto from '/team/fuad.jpg'
-import zamiPhoto from '/team/Zami.jpg'
+// Team member image paths (public folder references)
+const sadatPhoto = "/team/sadat3.jpg"
+const animeshPhoto = "/team/24141102_Animesh Bhattacharjee_Photo.jpg"
+const fuadPhoto = "/team/fuad.jpg"
+const zamiPhoto = "/team/Zami.jpg"
 
 interface TeamMember {
   name: string;

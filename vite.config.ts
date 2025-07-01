@@ -9,6 +9,7 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     minify: 'terser',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         entryFileNames: 'assets/js/[name].[hash].js',
@@ -26,6 +27,11 @@ export default defineConfig({
           }
           
           return 'assets/[ext]/[name].[hash][extname]';
+        },
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          animation: ['framer-motion']
         }
       }
     },
@@ -33,7 +39,14 @@ export default defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
       },
+      mangle: {
+        safari10: true
+      }
     },
   },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion']
+  }
 });

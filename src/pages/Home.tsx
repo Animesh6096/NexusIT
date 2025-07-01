@@ -3,9 +3,13 @@ import Button from '../components/Button'
 import CodingWindow from '../components/CodingWindow'
 import WebAnimation from '../components/WebAnimation'
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useSEO, seoConfigs } from '../hooks/useSEO'
 import { useRef } from 'react'
 
 const Home = () => {
+  // Apply SEO configuration for homepage
+  useSEO(seoConfigs.home)
+  
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Fade effect for services

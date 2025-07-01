@@ -2,94 +2,97 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Button from '../components/Button'
 import { useScrollToSection } from '../hooks/useScrollToSection'
+import { useSEO, seoConfigs } from '../hooks/useSEO'
+import { validateContent, validateEmail, validatePhone, sanitizeInput } from '../utils/security'
 
 const ContactPage = () => {
+  // Apply SEO configuration for contact page
+  useSEO(seoConfigs.contact)
+  
   const scrollToSection = useScrollToSection()
+  
+  // Enhanced form state with validation
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    company: '',
-    subject: '',
     message: ''
   })
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
-  const [errors, setErrors] = useState<{[key: string]: string}>({})
+  
+  const [formErrors, setFormErrors] = useState<{[key: string]: string}>({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  // Validation function
   const validateForm = () => {
-    const newErrors: {[key: string]: string} = {}
+    const errors: {[key: string]: string} = {}
     
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required'
+    // Validate name
+    const nameValidation = validateContent.name(formData.name)
+    if (!nameValidation.isValid) {
+      errors.name = nameValidation.error || 'Invalid name'
     }
     
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address'
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      errors.email = 'Please enter a valid email address'
     }
     
-    if (!formData.message.trim()) {
-      newErrors.message = 'Message is required'
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long'
+    // Validate phone (optional)
+    if (formData.phone && !validatePhone(formData.phone)) {
+      errors.phone = 'Please enter a valid phone number'
     }
     
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+    // Validate message
+    const messageValidation = validateContent.message(formData.message)
+    if (!messageValidation.isValid) {
+      errors.message = messageValidation.error || 'Invalid message'
+    }
+    
+    setFormErrors(errors)
+    return Object.keys(errors).length === 0
   }
 
-  // Handle form input changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
-
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Validate form before submission
     if (!validateForm()) {
       return
     }
     
-    // In a real application, you would send this data to your backend
-    // Here we're just simulating the API call
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    
     try {
-      setFormStatus('submitting')
-      setErrors({}) // Clear any previous errors
+      // Sanitize inputs
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        email: sanitizeInput(formData.email),
+        phone: sanitizeInput(formData.phone),
+        message: sanitizeInput(formData.message)
+      }
       
-      // Simulate API call with timeout
+      // Here you would typically send the data to your backend
+      console.log('Form submitted:', sanitizedData)
+      
+      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000))
       
-      console.log('Form submitted:', formData)
-      
-      // Reset form and show success message
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        message: ''
-      })
-      
-      setFormStatus('success')
-      
-      // Reset status after a few seconds
-      setTimeout(() => {
-        setFormStatus('idle')
-      }, 5000)
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', phone: '', message: '' })
+      setFormErrors({})
     } catch (error) {
-      console.error('Error submitting form:', error)
-      setFormStatus('error')
-      
-      // Reset status after a few seconds
-      setTimeout(() => {
-        setFormStatus('idle')
-      }, 5000)
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }))
+    // Clear error when user starts typing
+    if (formErrors[field]) {
+      setFormErrors(prev => ({ ...prev, [field]: '' }))
     }
   }
 
@@ -445,7 +448,7 @@ const ContactPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-4 md:p-8"
             >
-              {formStatus === 'success' ? (
+              {submitStatus === 'success' ? (
                 <div className="text-center py-8">
                   <div className="mx-auto flex items-center justify-center mb-4">
                     <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
@@ -458,11 +461,11 @@ const ContactPage = () => {
                   <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
                     Your message has been received. We'll get back to you shortly.
                   </p>
-                  <Button onClick={() => setFormStatus('idle')} variant="secondary">
+                  <Button onClick={() => setSubmitStatus('idle')} variant="secondary">
                     Send Another Message
                   </Button>
                 </div>
-              ) : formStatus === 'error' ? (
+              ) : submitStatus === 'error' ? (
                 <div className="text-center py-8">
                   <div className="mx-auto flex items-center justify-center mb-4">
                     <div className="h-16 w-16 rounded-full bg-red-100 flex items-center justify-center">
@@ -475,7 +478,7 @@ const ContactPage = () => {
                   <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
                     There was an error sending your message. Please try again.
                   </p>
-                  <Button onClick={() => setFormStatus('idle')} variant="secondary">
+                  <Button onClick={() => setSubmitStatus('idle')} variant="secondary">
                     Try Again
                   </Button>
                 </div>
@@ -491,17 +494,17 @@ const ContactPage = () => {
                         id="name"
                         name="name"
                         value={formData.name}
-                        onChange={handleChange}
+                        onChange={e => handleInputChange('name', e.target.value)}
                         required
                         className={`w-full px-3 py-2 md:px-4 md:py-2 border rounded-md shadow-sm focus:outline-none focus:ring-primary text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-600 text-sm md:text-base ${
-                          errors.name 
+                          formErrors.name 
                             ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
                             : 'border-gray-300 focus:border-primary'
                         }`}
                         placeholder="Your name"
                       />
-                      {errors.name && (
-                        <p className="mt-1 text-xs md:text-sm text-red-600 dark:text-red-400">{errors.name}</p>
+                      {formErrors.name && (
+                        <p className="mt-1 text-xs md:text-sm text-red-600 dark:text-red-400">{formErrors.name}</p>
                       )}
                     </div>
                     <div>
@@ -513,17 +516,17 @@ const ContactPage = () => {
                         id="email"
                         name="email"
                         value={formData.email}
-                        onChange={handleChange}
+                        onChange={e => handleInputChange('email', e.target.value)}
                         required
                         className={`w-full px-3 py-2 md:px-4 md:py-2 border rounded-md shadow-sm focus:outline-none focus:ring-primary text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-600 text-sm md:text-base ${
-                          errors.email 
+                          formErrors.email 
                             ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
                             : 'border-gray-300 focus:border-primary'
                         }`}
                         placeholder="your.email@example.com"
                       />
-                      {errors.email && (
-                        <p className="mt-1 text-xs md:text-sm text-red-600 dark:text-red-400">{errors.email}</p>
+                      {formErrors.email && (
+                        <p className="mt-1 text-xs md:text-sm text-red-600 dark:text-red-400">{formErrors.email}</p>
                       )}
                     </div>
                   </div>
@@ -538,46 +541,11 @@ const ContactPage = () => {
                         id="phone"
                         name="phone"
                         value={formData.phone}
-                        onChange={handleChange}
+                        onChange={e => handleInputChange('phone', e.target.value)}
                         className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-600 text-sm md:text-base"
                         placeholder="Your phone number"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="company" className="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-600 text-sm md:text-base"
-                        placeholder="Your company name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-xs md:text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
-                      Subject*
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 md:px-4 md:py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-600 text-sm md:text-base"
-                    >
-                      <option value="">Select a subject</option>
-                      <option value="General Inquiry">General Inquiry</option>
-                      <option value="Project Consultation">Project Consultation</option>
-                      <option value="Partnership Opportunity">Partnership Opportunity</option>
-                      <option value="Career Information">Career Information</option>
-                      <option value="Support Request">Support Request</option>
-                    </select>
                   </div>
 
                   <div>
@@ -588,28 +556,28 @@ const ContactPage = () => {
                       id="message"
                       name="message"
                       value={formData.message}
-                      onChange={handleChange}
+                      onChange={e => handleInputChange('message', e.target.value)}
                       rows={4}
                       required
                       className={`w-full px-3 py-2 md:px-4 md:py-2 border rounded-md shadow-sm focus:outline-none focus:ring-primary text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-600 text-sm md:text-base md:rows-5 ${
-                        errors.message 
+                        formErrors.message 
                           ? 'border-red-300 focus:border-red-500 focus:ring-red-500' 
                           : 'border-gray-300 focus:border-primary'
                       }`}
                       placeholder="How can we help you? (minimum 10 characters)"
                     ></textarea>
-                    {errors.message && (
-                      <p className="mt-1 text-xs md:text-sm text-red-600 dark:text-red-400">{errors.message}</p>
+                    {formErrors.message && (
+                      <p className="mt-1 text-xs md:text-sm text-red-600 dark:text-red-400">{formErrors.message}</p>
                     )}
                   </div>
 
                   <div className="flex justify-end">
                     <Button
                       type="submit"
-                      disabled={formStatus === 'submitting'}
+                      disabled={isSubmitting}
                       className="relative"
                     >
-                      {formStatus === 'submitting' ? (
+                      {isSubmitting ? (
                         <>
                           <span className="opacity-0">Send Message</span>
                           <div className="absolute inset-0 flex items-center justify-center">
