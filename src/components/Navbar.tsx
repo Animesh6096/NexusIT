@@ -173,7 +173,7 @@ const Navbar = () => {
               animate={{ opacity: 1, height: 'auto', y: 0 }}
               exit={{ opacity: 0, height: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden absolute top-full left-0 right-0 mx-3 mt-2 backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/50 overflow-hidden"
+              className="md:hidden absolute top-full left-0 right-0 mx-3 mt-2 rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/30 overflow-hidden bg-white dark:bg-gray-900"
             >
               <div className="px-4 py-4 space-y-2">
                 {navItems.map((item, index) => (
