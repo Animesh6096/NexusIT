@@ -177,31 +177,7 @@ h1 {
   line-height: 1.1;
 }
 
-button:not([aria-label="Toggle dark mode"]) {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: inherit;
-  @apply dark:bg-gray-800;
-}
-
-button:not([aria-label="Toggle dark mode"]):hover {
-  border-color: #646cff;
-  color: inherit;
-  @apply dark:bg-gray-700;
-  color: white !important; /* Ensure text remains visible on hover */
-}
-
-button:not([aria-label="Toggle dark mode"]):focus,
-button:not([aria-label="Toggle dark mode"]):focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+/* Removed global button styles that were interfering with component-specific styling */
 
 /* Dark mode toggle should not be affected by global button styles */
 button[aria-label="Toggle dark mode"] {
@@ -231,25 +207,9 @@ button[aria-label="Toggle dark mode"]:hover {
   a:hover {
     color: #646cff;
   }
-  
-  button:not([aria-label="Toggle dark mode"]) {
-    background-color: #f9f9f9;
-    color: #213547;
-  }
-  
-  button:not([aria-label="Toggle dark mode"]):hover {
-    background-color: #e5e5e5;
-    color: #213547;
-  }
 }
 
-.dark button:not([aria-label="Toggle dark mode"]) {
-  @apply bg-gray-700;
-}
-
-.dark button:not([aria-label="Toggle dark mode"]):hover {
-  @apply bg-gray-600 border-blue-400;
-}
+/* Removed problematic global button styles */
 
 @layer base {
   body {
