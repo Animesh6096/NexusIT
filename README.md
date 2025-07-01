@@ -5,13 +5,13 @@
 
 ### *Innovative Software Solutions for Modern Businesses*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://nexusit.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://slythos-it.netlify.app)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.2-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-[🌐 **Live Website**](https://nexusit.netlify.app) | [📧 **Contact Us**](mailto:slythosit.official@gmail.com) | [💼 **LinkedIn**](https://www.linkedin.com/company/slythosit)
+[🌐 **Live Website**](https://slythos-it.netlify.app) | [📧 **Contact Us**](mailto:slythosit.official@gmail.com) | [💼 **LinkedIn**](https://www.linkedin.com/company/slythos-it)
 
 ---
 
@@ -19,10 +19,12 @@
 
 ## 🌟 About SLYTHOS IT
 
-**SLYTHOS IT** is a leading software development company specializing in creating innovative, scalable, and secure digital solutions for businesses worldwide. Founded in 2015, we've grown from a boutique development shop to a comprehensive technology partner serving clients across multiple industries.
+**SLYTHOS IT** began as a small group of tech enthusiasts who wanted to create smart, useful software for everyone. What started as just web development has since expanded into a comprehensive IT services company that partners with businesses worldwide.
+
+Today, we assist businesses with e-commerce websites, app development, cybersecurity, AI and machine learning, UI/UX design, networking, software testing, data analysis, system integration, and software support.
 
 ### 🎯 Our Mission
-*To make cutting-edge technology accessible to businesses of all sizes while delivering exceptional value through innovative software solutions.*
+*Our goal is simple: use modern technology to solve real-world problems. We combine creativity and technical skills to develop solutions that work, grow, and benefit our clients.*
 
 ### 💼 Core Services
 
@@ -128,8 +130,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/slythosit/nexusit-website.git
-cd nexusit-website
+git clone https://github.com/Animesh6096/Slythos-IT.git
+cd Slythos-IT
 
 # Install dependencies
 npm install
@@ -199,7 +201,7 @@ slythos-it-website/
 ## 🌐 Deployment & Performance
 
 ### **Live Environment**
-- **Production**: [nexusit.netlify.app](https://nexusit.netlify.app)
+- **Production**: [slythos-it.netlify.app](https://slythos-it.netlify.app)
 - **CDN**: Global edge network via Netlify
 - **SSL**: Full encryption with automatic certificates
 - **Performance**: 95+ Lighthouse score
@@ -240,8 +242,8 @@ git push origin feature/amazing-feature
 
 ### **Need Help?**
 - 📧 **Email**: [slythosit.official@gmail.com](mailto:slythosit.official@gmail.com)
-- 💼 **LinkedIn**: [@slythosit](https://www.linkedin.com/company/slythosit)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/slythosit/nexusit-website/issues)
+- 💼 **LinkedIn**: [@slythos-it](https://www.linkedin.com/company/slythos-it)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/Animesh6096/Slythos-IT/issues)
 
 ---
 

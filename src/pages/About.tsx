@@ -199,20 +199,19 @@ const AboutPage = () => {
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6">Our Story</h2>
               <div className="h-1 w-16 md:w-20 bg-primary mb-4 md:mb-8"></div>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-4 md:mb-6">
-                Founded in 2015, SLYTHOS IT started as a small team of passionate developers with a shared vision: 
-                to make cutting-edge technology accessible to businesses of all sizes. What began as a boutique 
-                development shop has grown into a comprehensive software company serving clients worldwide.
+                SLYTHOS IT began as a small group of tech enthusiasts who wanted to create smart, useful software 
+                for everyone. What started as just web development has since expanded into a comprehensive IT 
+                services company that partners with businesses worldwide.
               </p>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-4 md:mb-6">
-                Over the years, we've expanded our team and expertise, building a track record of successful 
-                projects across various industries including finance, healthcare, education, and e-commerce. 
-                Our solutions have helped startups launch innovative products and established businesses 
-                modernize their digital infrastructure.
+                Today, we assist businesses with e-commerce websites, app development, cybersecurity, AI and 
+                machine learning, UI/UX design, networking, software testing, data analysis, system integration, 
+                and software support. Our solutions have helped startups launch innovative products and 
+                established businesses modernize their digital infrastructure.
               </p>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300">
-                Today, SLYTHOS IT continues to push the boundaries of what's possible in software development, 
-                combining technical excellence with creative thinking to craft solutions that address 
-                real-world challenges.
+                Our goal is simple: use modern technology to solve real-world problems. We combine creativity 
+                and technical skills to develop solutions that work, grow, and benefit our clients.
               </p>
             </motion.div>
             <motion.div 
