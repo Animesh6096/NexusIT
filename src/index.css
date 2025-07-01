@@ -198,12 +198,19 @@ button[aria-label="Toggle dark mode"] {
   padding: 0 !important;
   min-width: auto !important;
   min-height: auto !important;
+  opacity: 1 !important;
 }
 
 button[aria-label="Toggle dark mode"]:hover {
   background: transparent !important;
   border: none !important;
   color: inherit !important;
+  opacity: 1 !important;
+}
+
+/* Ensure dark mode toggle container is visible */
+button[aria-label="Toggle dark mode"] > div {
+  opacity: 1 !important;
 }
 
 @media (prefers-color-scheme: light) {
