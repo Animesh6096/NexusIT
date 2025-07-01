@@ -5,7 +5,7 @@
 
 ### *Innovative Software Solutions for Modern Businesses*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://slythos-it.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4043f8c2-fd2f-4dbe-8324-e3f33bfc89e3/deploy-status)](https://app.netlify.com/projects/slythos-it/deploys)
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-6.2-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
