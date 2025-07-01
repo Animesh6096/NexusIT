@@ -192,7 +192,7 @@ const CareersPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 overflow-hidden">
+      <section className="hero-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 overflow-hidden pt-16 lg:pt-20">
         {/* Career Growth Visualization */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0">

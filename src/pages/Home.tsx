@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-blue-900 dark:from-gray-950 dark:via-slate-900 dark:to-gray-900">
+      <section ref={heroRef} className="hero-section relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-blue-900 dark:from-gray-950 dark:via-slate-900 dark:to-gray-900 pt-16 lg:pt-20">
         {/* WebAnimation cursor effect */}
         <WebAnimation />
         

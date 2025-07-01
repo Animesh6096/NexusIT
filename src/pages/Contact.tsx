@@ -99,7 +99,7 @@ const ContactPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-blue-900 overflow-hidden">
+      <section className="hero-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-blue-900 overflow-hidden pt-16 lg:pt-20">
         {/* Communication Network Visualization */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0">
