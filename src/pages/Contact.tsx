@@ -258,8 +258,8 @@ const ContactPage = () => {
                     transition={{ duration: 0.2 }}
                   >
                     <div className="text-2xl mb-2">{item.icon}</div>
-                    <div className="text-white text-sm font-medium">{item.label}</div>
-                    <div className="text-gray-400 text-xs">{item.value}</div>
+                    <div className="text-white text-sm font-medium mb-1">{item.label}</div>
+                    <div className="text-gray-400 text-xs break-words overflow-hidden">{item.value}</div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -413,7 +413,7 @@ const ContactPage = () => {
                   {item.icon}
                 </div>
                 <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900 dark:text-gray-100 mb-1 md:mb-2">{item.title}</h3>
-                <p className="text-sm md:text-base text-primary font-medium mb-1">{item.info}</p>
+                <p className="text-sm md:text-base text-primary font-medium mb-1 break-words overflow-hidden">{item.info}</p>
                 <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
               </motion.div>
             ))}
