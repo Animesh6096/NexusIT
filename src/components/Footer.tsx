@@ -166,7 +166,7 @@ const Footer = () => {
                       <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
                       <span className="text-gray-500 dark:text-gray-400 mr-2">Email:</span>
                       <a href="mailto:contact@slythosit.com" className="hover:text-primary transition-colors duration-300">
-                        contact@slythosit.com
+                        slythosit.official@gmail.com
                       </a>
                     </div>
                   </li>
@@ -175,7 +175,7 @@ const Footer = () => {
                       <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
                       <span className="text-gray-500 dark:text-gray-400 mr-2">Phone:</span>
                       <a href="tel:+1234567890" className="hover:text-primary transition-colors duration-300">
-                        +1 (234) 567-8900
+                        +880 (164) 379-2804
                       </a>
                     </div>
                   </li>
@@ -183,7 +183,7 @@ const Footer = () => {
                     <div className="text-sm text-gray-600 dark:text-gray-300 flex items-center group">
                       <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
                       <span className="text-gray-500 dark:text-gray-400 mr-2">Address:</span>
-                      <span>Merul Badda, Dhaka, Bangladesh</span>
+                      <span>Gulshan 1, Dhaka, Bangladesh</span>
                     </div>
                   </li>
                 </ul>
