@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import { ThemeProvider } from './contexts/ThemeContext'
+import { useEffect } from 'react'
 
 // Page imports will go here
 import MainLayout from './layouts/MainLayout'
@@ -14,6 +15,11 @@ import Careers from './pages/Careers'
 import NotFound from './pages/NotFound'
 
 function App() {
+  useEffect(() => {
+    // Set the document title for the entire app
+    document.title = 'SlythosIT'
+  }, [])
+
   return (
     <ThemeProvider>
       <Router>
