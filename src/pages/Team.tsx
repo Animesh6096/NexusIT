@@ -39,6 +39,7 @@ const managementTeam: TeamMember[] = [
     image: "https://scontent-sin11-2.xx.fbcdn.net/v/t39.30808-6/473190466_1157625655961658_5570924613633303658_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHu0cdCfxBdeKZQkcbAjQVVmpOqPyWPZLiak6o_JY9kuL7ilqsXNhvPvFrHhBcy2tUDJp-61AUu-Hh_Kj2zErqj&_nc_ohc=fCqFkDdrNL8Q7kNvwHKkug8&_nc_oc=AdkYcktdhzSqcIRgyQ_e0nyLuG9xljVYMhqTuRm0wtIXMwFj4wbduzcycjENtB2pr1N2oRigrEvqWrPfbBDCYCa1&_nc_zt=23&_nc_ht=scontent-sin11-2.xx&_nc_gid=b6_Ry2sQv72w1h1powe4QQ&oh=00_AfNDWdCgbTcFSaM3GCqgRuQwgEx8mzn10bICMcI2AyUWCQ&oe=68676D05",
     bio: "Experienced project manager ensuring timely delivery and quality in all projects.",
     socials: {
+      facebook: "https://www.facebook.com/srij0nbasak",
       linkedin: "https://www.linkedin.com/in/srijon-basak-58b894234/",
       github: "https://github.com/SrijonBasak"
     }
