@@ -109,53 +109,108 @@ const Footer = () => {
                 </div>
               </motion.div>
 
-              {/* Services */}
-              <motion.div variants={slideIn} className="text-center md:text-left">
-                <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Services</h3>
-                <ul className="space-y-2">
-                  {[
-                    { name: "Web Development", href: "/services" },
-                    { name: "Mobile Apps", href: "/services" },
-                    { name: "UI/UX Design", href: "/services" },
-                    { name: "Cybersecurity", href: "/services" },
-                    { name: "AI & ML", href: "/services" }
-                  ].map((service) => (
-                    <li key={service.name} className="flex justify-center md:justify-start">
-                      <Link 
-                        to={service.href} 
-                        className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
-                      >
-                        <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                        {service.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+              {/* Services and Quick Links Container - Mobile: 2 columns, MD+: separate columns */}
+              <div className="md:contents">
+                {/* Mobile: Two columns side by side */}
+                <div className="grid grid-cols-2 gap-6 md:hidden">
+                  {/* Services */}
+                  <motion.div variants={slideIn} className="text-center">
+                    <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Services</h3>
+                    <ul className="space-y-2">
+                      {[
+                        { name: "Web Development", href: "/services" },
+                        { name: "Mobile Apps", href: "/services" },
+                        { name: "UI/UX Design", href: "/services" },
+                        { name: "Cybersecurity", href: "/services" },
+                        { name: "AI & ML", href: "/services" }
+                      ].map((service) => (
+                        <li key={service.name} className="flex justify-center">
+                          <Link 
+                            to={service.href} 
+                            className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
+                          >
+                            <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                            {service.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
 
-              {/* Quick Links */}
-              <motion.div variants={slideIn} className="text-center md:text-left">
-                <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Quick Links</h3>
-                <ul className="space-y-2">
-                  {[
-                    { name: "About Us", href: "/about" },
-                    { name: "Our Team", href: "/team" },
-                    { name: "Projects", href: "/projects" },
-                    { name: "Careers", href: "/careers" },
-                    { name: "Contact", href: "/contact" }
-                  ].map((link) => (
-                    <li key={link.name} className="flex justify-center md:justify-start">
-                      <Link 
-                        to={link.href} 
-                        className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
-                      >
-                        <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
-                        {link.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+                  {/* Quick Links */}
+                  <motion.div variants={slideIn} className="text-center">
+                    <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Quick Links</h3>
+                    <ul className="space-y-2">
+                      {[
+                        { name: "About Us", href: "/about" },
+                        { name: "Our Team", href: "/team" },
+                        { name: "Projects", href: "/projects" },
+                        { name: "Careers", href: "/careers" },
+                        { name: "Contact", href: "/contact" }
+                      ].map((link) => (
+                        <li key={link.name} className="flex justify-center">
+                          <Link 
+                            to={link.href} 
+                            className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
+                          >
+                            <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                            {link.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </div>
+
+                {/* Desktop: Separate columns */}
+                {/* Services */}
+                <motion.div variants={slideIn} className="hidden md:block text-center md:text-left">
+                  <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Services</h3>
+                  <ul className="space-y-2">
+                    {[
+                      { name: "Web Development", href: "/services" },
+                      { name: "Mobile Apps", href: "/services" },
+                      { name: "UI/UX Design", href: "/services" },
+                      { name: "Cybersecurity", href: "/services" },
+                      { name: "AI & ML", href: "/services" }
+                    ].map((service) => (
+                      <li key={service.name} className="flex justify-center md:justify-start">
+                        <Link 
+                          to={service.href} 
+                          className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
+                        >
+                          <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                          {service.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+
+                {/* Quick Links */}
+                <motion.div variants={slideIn} className="hidden md:block text-center md:text-left">
+                  <h3 className="text-base font-bold text-gray-800 dark:text-white mb-4">Quick Links</h3>
+                  <ul className="space-y-2">
+                    {[
+                      { name: "About Us", href: "/about" },
+                      { name: "Our Team", href: "/team" },
+                      { name: "Projects", href: "/projects" },
+                      { name: "Careers", href: "/careers" },
+                      { name: "Contact", href: "/contact" }
+                    ].map((link) => (
+                      <li key={link.name} className="flex justify-center md:justify-start">
+                        <Link 
+                          to={link.href} 
+                          className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 flex items-center group"
+                        >
+                          <span className="w-1 h-1 bg-primary rounded-full mr-2 group-hover:scale-150 transition-transform duration-300"></span>
+                          {link.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              </div>
 
               {/* Contact Info */}
               <motion.div variants={slideIn} className="text-center md:text-left">
