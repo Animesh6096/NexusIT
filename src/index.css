@@ -37,26 +37,38 @@ html, body {
 }
 
 /* Focus states for accessibility - but not for navigation buttons */
-*:focus:not(.nav-link):not([role="button"]):not(button) {
+*:focus:not(.nav-link):not([role="button"]):not(button):not(a) {
   outline: 2px solid #007BFF;
   outline-offset: 2px;
 }
 
-/* Custom focus for navigation links */
-.nav-link:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-  border-radius: 4px;
+/* Remove focus outline for navigation links and buttons */
+.nav-link:focus,
+.nav-link:focus-visible,
+nav a:focus,
+nav a:focus-visible,
+nav button:focus,
+nav button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
-/* Remove focus outline for buttons but keep accessibility */
-button:focus {
-  outline: none;
-}
-
+/* Remove focus outline for all buttons but keep accessibility with subtle shadow */
+button:focus,
 button:focus-visible {
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-  border-radius: 4px;
+  outline: none !important;
+}
+
+/* Remove focus styles for all links in navigation */
+nav a {
+  outline: none !important;
+}
+
+nav a:focus,
+nav a:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Skip to main content styling */
@@ -291,5 +303,44 @@ button[aria-label="Toggle dark mode"]:hover {
   .hero-section .flex.flex-col,
   .hero-section .flex.flex-row {
     gap: 0.5rem !important;
+  }
+}
+
+/* Additional navigation button focus removal */
+nav button,
+nav a,
+.nav-link,
+[data-nav-link],
+header button,
+header a {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+nav button:focus,
+nav button:active,
+nav button:focus-visible,
+nav a:focus,
+nav a:active,
+nav a:focus-visible,
+.nav-link:focus,
+.nav-link:active,
+.nav-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+}
+
+/* Remove any default browser focus styles for mobile */
+@media (max-width: 768px) {
+  nav button,
+  nav a,
+  .nav-link {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    outline: none !important;
   }
 }
