@@ -68,54 +68,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 min-w-0">
-            <Link to="/" onClick={handleNavClick} className="flex items-center">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent truncate"
-              >
-                SLYTHOS IT
-              </motion.div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation - keeping it centered */}
-          <div className="hidden md:flex flex-1 justify-center">
-            <ul className="flex space-x-8">
-              {navItems.map((item) => (
-                <li key={item.name}>
-                  <NavLink
-                    to={item.path}
-                    onClick={handleNavClick}
-                    className={({ isActive }: { isActive: boolean }) =>
-                      `text-base font-medium transition-all duration-300 ${
-                        isActive
-                          ? 'text-primary border-b-2 border-primary pb-1'
-                          : scrolled
-                          ? 'text-gray-700 dark:text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
-                          : 'text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
-                      }`
-                    }
-                  >
-                    {item.name}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Dark Mode Toggle - separate from navigation */}
-          <div className="hidden md:flex items-center justify-end space-x-4">
-            <DarkModeToggle className="relative z-10" />
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="flex md:hidden items-center space-x-3">
-            <DarkModeToggle className="mr-1" />
+          {/* Mobile: Hamburger + Logo + Dark Mode Toggle */}
+          <div className="flex md:hidden items-center justify-between w-full">
+            {/* Hamburger menu button - left side */}
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-1 sm:p-1.5 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="inline-flex items-center justify-center p-1 sm:p-1.5 rounded-md text-gray-700 dark:text-white hover:text-primary focus:outline-none focus:ring-0"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             >
@@ -151,6 +109,64 @@ const Navbar = () => {
                 />
               </svg>
             </button>
+
+            {/* Logo - center */}
+            <div className="flex-1 flex justify-center">
+              <Link to="/" onClick={handleNavClick} className="flex items-center">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="text-lg sm:text-xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent"
+                >
+                  SLYTHOS IT
+                </motion.div>
+              </Link>
+            </div>
+
+            {/* Dark Mode Toggle - right side */}
+            <DarkModeToggle />
+          </div>
+
+          {/* Desktop Layout */}
+          {/* Logo - Desktop */}
+          <div className="hidden md:flex flex-shrink-0 min-w-0">
+            <Link to="/" onClick={handleNavClick} className="flex items-center">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent truncate"
+              >
+                SLYTHOS IT
+              </motion.div>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation - keeping it centered */}
+          <div className="hidden md:flex flex-1 justify-center">
+            <ul className="flex space-x-8">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <NavLink
+                    to={item.path}
+                    onClick={handleNavClick}
+                    className={({ isActive }: { isActive: boolean }) =>
+                      `nav-link text-base font-medium transition-all duration-300 ${
+                        isActive
+                          ? 'text-primary border-b-2 border-primary pb-1'
+                          : scrolled
+                          ? 'text-gray-700 dark:text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
+                          : 'text-white hover:text-primary hover:border-b-2 hover:border-primary hover:pb-1'
+                      }`
+                    }
+                  >
+                    {item.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Dark Mode Toggle - Desktop */}
+          <div className="hidden md:flex items-center justify-end space-x-4">
+            <DarkModeToggle className="relative z-10" />
           </div>
         </div>
 
@@ -170,7 +186,7 @@ const Navbar = () => {
                     to={item.path}
                     onClick={handleNavClick}
                     className={({ isActive }: { isActive: boolean }) =>
-                      `block px-3 py-2 rounded-md text-base font-medium ${
+                      `nav-link block px-3 py-2 rounded-md text-base font-medium ${
                         isActive
                           ? 'text-primary bg-gray-50 dark:bg-gray-800'
                           : 'text-gray-700 dark:text-white hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800'
