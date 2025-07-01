@@ -85,7 +85,7 @@ const developmentTeam: TeamMember[] = [
     bio: "Frontend developer passionate about creating intuitive and engaging user interfaces.",
     socials: {
       facebook: "https://www.facebook.com/sakiburrahman.akash",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/md-sakibur-rahman-390521245/",
       github: "#"
     }
   },
@@ -97,7 +97,7 @@ const developmentTeam: TeamMember[] = [
     socials: {
       facebook: "https://www.facebook.com/hs.zami18",
       linkedin: "https://www.linkedin.com/in/hasan-sarwar-zami-b150302a4/",
-      github: "#"
+      github: "https://github.com/noobcoder-hasan"
     }
   },
   {
@@ -108,7 +108,7 @@ const developmentTeam: TeamMember[] = [
     socials: {
       facebook: "https://www.facebook.com/dean.anit",
       linkedin: "https://www.linkedin.com/in/anit-paul-625174335/",
-      github: "#"
+      github: "https://github.com/AnitPaul112"
     }
   }
 ];
