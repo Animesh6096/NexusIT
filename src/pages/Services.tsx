@@ -118,7 +118,7 @@ const ServicesPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section relative h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-16 lg:pt-20">
+      <section className="hero-section relative min-h-screen h-[85vh] sm:h-[90vh] lg:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-16 lg:pt-20">
         {/* Animated Background Grid */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{

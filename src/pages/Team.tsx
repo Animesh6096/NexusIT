@@ -179,7 +179,7 @@ const TeamPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section relative h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 pt-16 lg:pt-20">
+      <section className="hero-section relative min-h-screen h-[85vh] sm:h-[90vh] lg:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 pt-16 lg:pt-20">
         {/* Team Connection Lines Background */}
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 1200 800">
