@@ -179,14 +179,14 @@ const ContactPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-8 sm:py-12 lg:py-16 pb-16 sm:pb-20">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-6 sm:py-8 lg:py-12 pb-12 sm:pb-16">
             {/* Content */}
             <div className="lg:w-3/5 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="hidden sm:inline-block px-6 py-3 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-500/30 mb-8"
+                className="hidden sm:inline-block px-6 py-3 bg-teal-500/20 backdrop-blur-sm rounded-full border border-teal-500/30 mb-6 sm:mb-8"
               >
                 <span className="text-teal-400 font-medium text-sm sm:text-base">Let's Connect</span>
               </motion.div>
@@ -195,7 +195,7 @@ const ContactPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8"
               >
                 Get In{' '}
                 <span className="bg-gradient-to-r from-primary via-teal-400 to-blue-400 bg-clip-text text-transparent">
@@ -207,14 +207,14 @@ const ContactPage = () => {
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="h-1 w-32 bg-gradient-to-r from-primary to-teal-400 mb-8 mx-auto lg:mx-0"
+                className="h-1 w-32 bg-gradient-to-r from-primary to-teal-400 mb-6 sm:mb-8 mx-auto lg:mx-0"
               ></motion.div>
               
               <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-xl sm:text-2xl text-gray-200 mb-8 leading-relaxed"
+                className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed"
               >
                 Ready to discuss your project? We'd love to hear from you. 
                 Let's turn your ideas into reality together.
@@ -224,7 +224,7 @@ const ContactPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 sm:mb-8"
               >
                 <Button 
                   onClick={() => scrollToSection('contact-form')}
@@ -444,7 +444,7 @@ const ContactPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-6 md:mb-10"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 md:mb-4">Send Us a Message</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3 md:mb-4">Send Us a Message</h2>
               <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                 Fill out the form below and we'll get back to you as soon as possible.
               </p>
@@ -642,7 +642,7 @@ const ContactPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-10 md:mb-16"
           >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 md:mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3 md:mb-4">Frequently Asked Questions</h2>
             <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Have questions? We've got answers. If you can't find what you're looking for, 
               don't hesitate to reach out to us directly.

@@ -242,12 +242,12 @@ const TeamPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto py-8 sm:py-12 lg:py-16 pb-16 sm:pb-20">
+          <div className="text-center max-w-5xl mx-auto py-6 sm:py-8 lg:py-12 pb-12 sm:pb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="hidden sm:inline-block px-6 py-3 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-8"
+              className="hidden sm:inline-block px-6 py-3 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-6 sm:mb-8"
             >
               <span className="text-green-400 font-medium text-sm sm:text-base">Meet Our Team</span>
             </motion.div>
@@ -256,7 +256,7 @@ const TeamPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8"
             >
               The Minds Behind{' '}
               <span className="bg-gradient-to-r from-primary via-green-400 to-blue-400 bg-clip-text text-transparent">
@@ -268,14 +268,14 @@ const TeamPage = () => {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="h-1 w-32 bg-gradient-to-r from-primary to-green-400 mb-8 mx-auto"
+              className="h-1 w-32 bg-gradient-to-r from-primary to-green-400 mb-6 sm:mb-8 mx-auto"
             ></motion.div>
             
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl sm:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto"
+              className="text-lg sm:text-xl text-gray-200 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto"
             >
               Meet the talented individuals who bring expertise from diverse fields 
               to deliver exceptional solutions and drive SLYTHOS IT's success.
@@ -286,7 +286,7 @@ const TeamPage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto"
             >
               {[
                 { number: '10+', label: 'Team Members', color: 'primary' },
@@ -296,19 +296,19 @@ const TeamPage = () => {
               ].map((stat, index) => (
                 <motion.div 
                   key={index}
-                  className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/20 group`}
+                  className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 group min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] flex flex-col justify-center items-center`}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <motion.div 
-                    className={`w-12 h-12 bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 rounded-xl mx-auto mb-4 flex items-center justify-center`}
+                    className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 rounded-md sm:rounded-lg lg:rounded-xl mx-auto mb-1 sm:mb-2 lg:mb-4 flex items-center justify-center`}
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className={`w-6 h-6 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-lg`}></div>
+                    <div className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-sm sm:rounded-md lg:rounded-lg`}></div>
                   </motion.div>
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-300 text-sm">{stat.label}</div>
+                  <div className="text-base sm:text-lg lg:text-2xl xl:text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-gray-300 text-xs sm:text-sm text-center leading-tight">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -377,7 +377,7 @@ const TeamPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4"
               >
                 Management Team
               </motion.h2>
@@ -386,7 +386,7 @@ const TeamPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+                className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               >
                 Our management team brings strategic vision and leadership to guide SLYTHOS IT towards continued excellence and innovation.
               </motion.p>
@@ -405,7 +405,7 @@ const TeamPage = () => {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative overflow-hidden h-48 sm:h-60 lg:h-80">
+                  <div className="relative overflow-hidden h-32 sm:h-48 md:h-56 lg:h-64">
                     <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
@@ -449,7 +449,7 @@ const TeamPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4"
+                className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 sm:mb-4"
               >
                 Development Team
               </motion.h2>
@@ -458,7 +458,7 @@ const TeamPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+                className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
               >
                 Our skilled developers bring technical expertise and innovation to create cutting-edge solutions.
               </motion.p>
@@ -477,7 +477,7 @@ const TeamPage = () => {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative overflow-hidden h-48 sm:h-60 lg:h-80">
+                  <div className="relative overflow-hidden h-32 sm:h-48 md:h-56 lg:h-64">
                     <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
@@ -683,7 +683,7 @@ const TeamPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6"
             >
               Join Our Team
             </motion.h2>
@@ -692,7 +692,7 @@ const TeamPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-white/90 mb-10"
+              className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-10"
             >
               We're always looking for talented individuals who are passionate about technology and innovation.
               Check out our current openings or drop us your resume for future opportunities.

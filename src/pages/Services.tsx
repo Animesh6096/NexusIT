@@ -159,12 +159,12 @@ const ServicesPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto py-8 sm:py-12 lg:py-16 pb-16 sm:pb-20">
+          <div className="text-center max-w-5xl mx-auto py-6 sm:py-8 lg:py-12 pb-12 sm:pb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="hidden sm:inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-8"
+              className="hidden sm:inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-6 sm:mb-8"
             >
               <span className="text-primary font-medium text-sm sm:text-base">Our Services</span>
             </motion.div>
@@ -173,7 +173,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8"
             >
               Comprehensive{' '}
               <span className="bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -185,14 +185,14 @@ const ServicesPage = () => {
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="h-1 w-32 bg-gradient-to-r from-primary to-purple-400 mb-8 mx-auto"
+              className="h-1 w-32 bg-gradient-to-r from-primary to-purple-400 mb-6 sm:mb-8 mx-auto"
             ></motion.div>
             
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl sm:text-2xl text-gray-200 mb-12 leading-relaxed max-w-4xl mx-auto"
+              className="text-lg sm:text-xl text-gray-200 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto"
             >
               From web development to AI implementation, we provide end-to-end services 
               designed to transform your business and drive unprecedented success.
@@ -203,7 +203,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto"
+              className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto"
             >
               {[
                 { number: '7+', label: 'Core Services' },
@@ -213,12 +213,12 @@ const ServicesPage = () => {
               ].map((stat, index) => (
                 <motion.div 
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
+                  className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] flex flex-col justify-center items-center"
                   whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-300 text-sm">{stat.label}</div>
+                  <div className="text-base sm:text-lg lg:text-2xl xl:text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-gray-300 text-xs sm:text-sm text-center leading-tight">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -326,7 +326,7 @@ const ServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6"
             >
               Ready to Get Started?
             </motion.h2>
@@ -335,7 +335,7 @@ const ServicesPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-white/90 mb-10"
+              className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-10"
             >
               Let's discuss your project and find the perfect solution for your business needs.
             </motion.p>
