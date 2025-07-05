@@ -179,7 +179,7 @@ const TeamPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen h-[85vh] sm:h-[90vh] lg:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 pt-16 lg:pt-20">
+      <section className="hero-section relative min-h-[650px] h-[calc(100vh-4rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-1rem)] lg:h-screen xl:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 pt-16 lg:pt-20">
         {/* Team Connection Lines Background */}
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 1200 800">
@@ -241,13 +241,13 @@ const TeamPage = () => {
           ))}
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto py-6 sm:py-8 lg:py-12 pb-12 sm:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col h-full">
+          <div className="text-center max-w-5xl mx-auto py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 flex-1 flex flex-col justify-center pb-16 sm:pb-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="hidden sm:inline-block px-6 py-3 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-6 sm:mb-8"
+              className="hidden sm:inline-block px-6 py-3 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-4 sm:mb-6 lg:mb-8"
             >
               <span className="text-green-400 font-medium text-sm sm:text-base">Meet Our Team</span>
             </motion.div>
@@ -275,7 +275,7 @@ const TeamPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl text-gray-200 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto"
+              className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto"
             >
               Meet the talented individuals who bring expertise from diverse fields 
               to deliver exceptional solutions and drive SLYTHOS IT's success.
@@ -286,7 +286,7 @@ const TeamPage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto"
             >
               {[
                 { number: '10+', label: 'Team Members', color: 'primary' },
@@ -296,18 +296,18 @@ const TeamPage = () => {
               ].map((stat, index) => (
                 <motion.div 
                   key={index}
-                  className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 group min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] flex flex-col justify-center items-center`}
+                  className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 group min-h-[80px] sm:min-h-[100px] lg:min-h-[140px] flex flex-col justify-center items-center`}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <motion.div 
-                    className={`w-6 h-6 sm:w-8 sm:h-8 lg:w-12 lg:h-12 bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 rounded-md sm:rounded-lg lg:rounded-xl mx-auto mb-1 sm:mb-2 lg:mb-4 flex items-center justify-center`}
+                    className={`w-4 h-4 sm:w-6 sm:h-6 lg:w-12 lg:h-12 bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 rounded-sm sm:rounded-md lg:rounded-xl mx-auto mb-1 sm:mb-2 lg:mb-4 flex items-center justify-center`}
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-sm sm:rounded-md lg:rounded-lg`}></div>
+                    <div className={`w-2 h-2 sm:w-3 sm:h-3 lg:w-6 lg:h-6 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-sm lg:rounded-lg`}></div>
                   </motion.div>
-                  <div className="text-base sm:text-lg lg:text-2xl xl:text-3xl font-bold text-white mb-1">{stat.number}</div>
+                  <div className="text-sm sm:text-base lg:text-2xl xl:text-3xl font-bold text-white mb-1">{stat.number}</div>
                   <div className="text-gray-300 text-xs sm:text-sm text-center leading-tight">{stat.label}</div>
                 </motion.div>
               ))}
@@ -342,7 +342,7 @@ const TeamPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-30 flex justify-center"
+          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('team-members')}
@@ -350,16 +350,16 @@ const TeamPage = () => {
             aria-label="Scroll down"
             whileHover={{ y: -2 }}
           >
-            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium text-center whitespace-nowrap">Discover More</span>
+            <span className="text-xs sm:text-sm mb-1 sm:mb-2 font-medium text-center whitespace-nowrap">Discover More</span>
             <motion.div
-              animate={{ y: [0, 6, 0] }}
+              animate={{ y: [0, 4, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center items-start mx-auto"
+              className="w-4 h-6 sm:w-5 sm:h-8 lg:w-6 lg:h-10 border-2 border-white/40 rounded-full flex justify-center items-start mx-auto"
             >
               <motion.div
-                animate={{ y: [0, 8, 0] }}
+                animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1 h-1.5 sm:h-2 bg-white rounded-full mt-1.5 sm:mt-2"
+                className="w-1 h-1 sm:h-1.5 lg:h-2 bg-white rounded-full mt-1 sm:mt-1.5 lg:mt-2"
               />
             </motion.div>
           </motion.button>

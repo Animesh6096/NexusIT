@@ -118,7 +118,7 @@ const ServicesPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen h-[85vh] sm:h-[90vh] lg:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-16 lg:pt-20">
+      <section className="hero-section relative min-h-[650px] h-[calc(100vh-4rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-1rem)] lg:h-screen xl:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-16 lg:pt-20">
         {/* Animated Background Grid */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
@@ -158,13 +158,13 @@ const ServicesPage = () => {
           </motion.div>
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-5xl mx-auto py-6 sm:py-8 lg:py-12 pb-12 sm:pb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col h-full">
+          <div className="text-center max-w-5xl mx-auto py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 flex-1 flex flex-col justify-center pb-16 sm:pb-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="hidden sm:inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-6 sm:mb-8"
+              className="hidden sm:inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-4 sm:mb-6 lg:mb-8"
             >
               <span className="text-primary font-medium text-sm sm:text-base">Our Services</span>
             </motion.div>
@@ -192,7 +192,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl text-gray-200 mb-8 sm:mb-12 leading-relaxed max-w-4xl mx-auto"
+              className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto"
             >
               From web development to AI implementation, we provide end-to-end services 
               designed to transform your business and drive unprecedented success.
@@ -203,7 +203,7 @@ const ServicesPage = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto"
+              className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto"
             >
               {[
                 { number: '7+', label: 'Core Services' },
@@ -213,7 +213,7 @@ const ServicesPage = () => {
               ].map((stat, index) => (
                 <motion.div 
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 min-h-[100px] sm:min-h-[120px] lg:min-h-[140px] flex flex-col justify-center items-center"
+                  className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 min-h-[80px] sm:min-h-[100px] lg:min-h-[140px] flex flex-col justify-center items-center"
                   whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
                   transition={{ duration: 0.3 }}
                 >
@@ -252,7 +252,7 @@ const ServicesPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-30 flex justify-center"
+          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('services-grid')}
@@ -260,16 +260,16 @@ const ServicesPage = () => {
             aria-label="Scroll down"
             whileHover={{ y: -2 }}
           >
-            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium text-center whitespace-nowrap">Discover More</span>
+            <span className="text-xs sm:text-sm mb-1 sm:mb-2 font-medium text-center whitespace-nowrap">Discover More</span>
             <motion.div
-              animate={{ y: [0, 6, 0] }}
+              animate={{ y: [0, 4, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center items-start mx-auto"
+              className="w-4 h-6 sm:w-5 sm:h-8 lg:w-6 lg:h-10 border-2 border-white/40 rounded-full flex justify-center items-start mx-auto"
             >
               <motion.div
-                animate={{ y: [0, 8, 0] }}
+                animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1 h-1.5 sm:h-2 bg-white rounded-full mt-1.5 sm:mt-2"
+                className="w-1 h-1 sm:h-1.5 lg:h-2 bg-white rounded-full mt-1 sm:mt-1.5 lg:mt-2"
               />
             </motion.div>
           </motion.button>
