@@ -263,14 +263,14 @@ const CareersPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-8 sm:py-12 lg:py-16 pb-16 sm:pb-20">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-6 sm:py-8 lg:py-12 pb-12 sm:pb-16">
             {/* Content */}
             <div className="lg:w-3/5 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="hidden sm:inline-block px-6 py-3 bg-purple-500/20 backdrop-blur-sm rounded-full border border-purple-500/30 mb-8"
+                className="hidden sm:inline-block px-6 py-3 bg-purple-500/20 backdrop-blur-sm rounded-full border border-purple-500/30 mb-6 sm:mb-8"
               >
                 <span className="text-purple-400 font-medium text-sm sm:text-base">Join Our Journey</span>
               </motion.div>
@@ -279,7 +279,7 @@ const CareersPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8"
               >
                 Shape Your{' '}
                 <span className="bg-gradient-to-r from-primary via-purple-400 to-indigo-400 bg-clip-text text-transparent">
@@ -293,14 +293,14 @@ const CareersPage = () => {
                 initial={{ opacity: 0, scaleX: 0 }}
                 animate={{ opacity: 1, scaleX: 1 }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="h-1 w-32 bg-gradient-to-r from-primary to-purple-400 mb-8 mx-auto lg:mx-0"
+                className="h-1 w-32 bg-gradient-to-r from-primary to-purple-400 mb-6 sm:mb-8 mx-auto lg:mx-0"
               ></motion.div>
               
               <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-xl sm:text-2xl text-gray-200 mb-8 leading-relaxed"
+                className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed"
               >
                 Explore exciting opportunities at SLYTHOS IT and become part of a team 
                 that's building innovative solutions for the future.
@@ -310,7 +310,7 @@ const CareersPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 sm:mb-8"
               >
                 <Button 
                   onClick={() => scrollToSection('open-positions')}
@@ -456,7 +456,7 @@ const CareersPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
             >
               Why Join SLYTHOS IT?
             </motion.h2>
@@ -569,7 +569,7 @@ const CareersPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4"
             >
               Current Openings
             </motion.h2>
@@ -839,7 +839,7 @@ const CareersPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6"
             >
               Don't See a Perfect Fit?
             </motion.h2>

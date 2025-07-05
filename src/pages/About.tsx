@@ -55,7 +55,7 @@ const AboutPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6"
               >
                 About{' '}
                 <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
@@ -112,38 +112,38 @@ const AboutPage = () => {
                 className="relative"
               >
                 <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
                     <motion.div 
-                      className="bg-primary/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-primary/30"
+                      className="bg-primary/20 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-center border border-primary/30 min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="text-3xl font-bold text-white mb-2">50+</div>
-                      <div className="text-gray-300 text-sm">Projects Completed</div>
+                      <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">50+</div>
+                      <div className="text-gray-300 text-xs sm:text-sm">Projects Completed</div>
                     </motion.div>
                     <motion.div 
-                      className="bg-blue-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-blue-500/30"
+                      className="bg-blue-500/20 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-center border border-blue-500/30 min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="text-3xl font-bold text-white mb-2">3+</div>
-                      <div className="text-gray-300 text-sm">Years Experience</div>
+                      <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">3+</div>
+                      <div className="text-gray-300 text-xs sm:text-sm">Years Experience</div>
                     </motion.div>
                     <motion.div 
-                      className="bg-purple-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-purple-500/30"
+                      className="bg-purple-500/20 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-center border border-purple-500/30 min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="text-3xl font-bold text-white mb-2">20+</div>
-                      <div className="text-gray-300 text-sm">Happy Clients</div>
+                      <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">20+</div>
+                      <div className="text-gray-300 text-xs sm:text-sm">Happy Clients</div>
                     </motion.div>
                     <motion.div 
-                      className="bg-green-500/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-green-500/30"
+                      className="bg-green-500/20 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-center border border-green-500/30 min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                      <div className="text-gray-300 text-sm">Support</div>
+                      <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">24/7</div>
+                      <div className="text-gray-300 text-xs sm:text-sm">Support</div>
                     </motion.div>
                   </div>
                 </div>
@@ -205,7 +205,7 @@ const AboutPage = () => {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2"
             >
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6">Our Story</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6">Our Story</h2>
               <div className="h-1 w-16 md:w-20 bg-primary mb-4 md:mb-8"></div>
               <p className="text-sm md:text-base lg:text-lg text-gray-700 dark:text-gray-300 mb-4 md:mb-6">
                 SLYTHOS IT began as a small group of tech enthusiasts who wanted to create smart, useful software 
@@ -251,7 +251,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
               transition={{ duration: 0.8 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6"
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4 md:mb-6"
             >
               Vision, Mission & Core Values
             </motion.h2>
@@ -335,7 +335,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               variants={fadeIn}
               transition={{ duration: 0.6 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-10 md:mb-16 text-gray-800 dark:text-gray-100"
+              className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-10 md:mb-16 text-gray-800 dark:text-gray-100"
             >
               OUR GOALS
             </motion.h3>
@@ -515,7 +515,7 @@ const AboutPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6"
+              className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6"
             >
               Join Us in Building the Future
             </motion.h2>

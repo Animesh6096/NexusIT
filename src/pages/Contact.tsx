@@ -247,7 +247,7 @@ const ContactPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0"
+                className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 max-w-lg mx-auto lg:mx-0"
               >
                 {[
                   { label: 'Email Us', value: 'slythosit.official@gmail.com', icon: '📧' },
@@ -256,13 +256,13 @@ const ContactPage = () => {
                 ].map((item, index) => (
                   <motion.div 
                     key={index}
-                    className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 text-center"
+                    className="bg-white/5 backdrop-blur-sm rounded-lg p-2 sm:p-3 lg:p-4 border border-white/10 text-center min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center"
                     whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="text-2xl mb-2">{item.icon}</div>
-                    <div className="text-white text-sm font-medium mb-1">{item.label}</div>
-                    <div className="text-gray-400 text-xs break-words overflow-hidden">{item.value}</div>
+                    <div className="text-lg sm:text-xl lg:text-2xl mb-1 sm:mb-2">{item.icon}</div>
+                    <div className="text-white text-xs sm:text-sm font-medium mb-1">{item.label}</div>
+                    <div className="text-gray-400 text-xs break-words overflow-hidden leading-tight">{item.value}</div>
                   </motion.div>
                 ))}
               </motion.div>
