@@ -349,7 +349,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   whileHover={{ y: -5 }}
-                  className="hidden lg:block absolute top-0 right-0 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-10"
+                  className="hidden lg:block absolute -top-5 -right-9 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-20"
                 >
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -364,7 +364,7 @@ const Home = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                   whileHover={{ y: -5 }}
-                  className="hidden lg:block absolute bottom-4 left-0 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-10"
+                  className="hidden lg:block absolute -bottom-5 -left-9 bg-white dark:bg-gray-800 p-3 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-20"
                 >
                   <div className="flex items-center space-x-2">
                     <svg className="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
