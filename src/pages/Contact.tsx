@@ -99,7 +99,7 @@ const ContactPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="hero-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-teal-900 to-blue-900 overflow-hidden pt-16 lg:pt-20">
+      <section className="hero-section relative h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-teal-900 to-blue-900 pt-16 lg:pt-20">
         {/* Communication Network Visualization */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0">
@@ -179,7 +179,7 @@ const ContactPage = () => {
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 pt-20 pb-8 sm:py-12 lg:py-16">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-8 sm:py-12 lg:py-16 pb-16 sm:pb-20">
             {/* Content */}
             <div className="lg:w-3/5 text-center lg:text-left">
               <motion.div
@@ -347,28 +347,37 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        {/* Enhanced Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-30 flex justify-center"
         >
-          <div className="flex flex-col items-center text-white/70">
-            <span className="text-sm mb-2 hidden md:block">Start your project</span>
+          <motion.button 
+            onClick={() => scrollToSection('contact-info')}
+            className="flex flex-col items-center justify-center text-white/80 hover:text-white transition-colors group"
+            aria-label="Scroll down"
+            whileHover={{ y: -2 }}
+          >
+            <span className="text-xs sm:text-sm mb-2 sm:mb-3 font-medium text-center whitespace-nowrap">Discover More</span>
             <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/40 rounded-full flex justify-center items-start mx-auto"
             >
-              <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1 h-1.5 sm:h-2 bg-white rounded-full mt-1.5 sm:mt-2"
+              />
             </motion.div>
-          </div>
+          </motion.button>
         </motion.div>
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-10 md:py-16 bg-white dark:bg-gray-900">
+      <section id="contact-info" className="py-10 md:py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {[
