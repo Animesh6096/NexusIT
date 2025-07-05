@@ -236,7 +236,7 @@ const ContactPage = () => {
                 <Button 
                   to="/services"
                   variant="secondary" 
-                  className="px-10 py-4 text-lg border border-white/30 hover:bg-white/10 transition-all duration-300"
+                  className="px-10 py-4 text-lg bg-white/5 backdrop-blur-sm border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300"
                 >
                   Our Services
                 </Button>
