@@ -269,7 +269,7 @@ const ContactPage = () => {
             </div>
 
             {/* Contact Form Preview */}
-            <div className="lg:w-2/5">
+            <div className="hidden sm:block lg:w-2/5">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}

@@ -355,7 +355,7 @@ const CareersPage = () => {
             </div>
 
             {/* Career Benefits Visualization */}
-            <div className="lg:w-2/5">
+            <div className="hidden sm:block lg:w-2/5">
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -448,7 +448,7 @@ const CareersPage = () => {
       </section>
 
       {/* Why Join Us Section */}
-      <section id="why-join-us" className="py-20 bg-white dark:bg-gray-900">
+      <section id="why-join-us" className="hidden sm:block py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2
