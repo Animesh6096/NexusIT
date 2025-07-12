@@ -394,7 +394,7 @@ const TeamPage = () => {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative overflow-hidden h-32 sm:h-48 md:h-56 lg:h-64">
+                  <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 lg:h-80">
                     <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
@@ -466,7 +466,7 @@ const TeamPage = () => {
                   variants={itemVariants}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden group relative hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="relative overflow-hidden h-32 sm:h-48 md:h-56 lg:h-64">
+                  <div className="relative overflow-hidden h-48 sm:h-56 md:h-64 lg:h-80">
                     <TeamMemberImage 
                       src={member.image} 
                       alt={member.name} 
