@@ -215,8 +215,8 @@ const ServicesPage = () => {
                 transition={{ duration: 1, delay: 0.4 }}
                 className="relative"
               >
-                {/* Compact Vertical Stack Design */}
-                <div className="space-y-3">
+                {/* Compact Vertical Stack Design - Mobile 2 Columns */}
+                <div className="grid grid-cols-2 lg:block lg:space-y-3 gap-3 lg:gap-0">
                   {[
                     { number: '10+', label: 'Core Services', color: 'primary', icon: '⚡' },
                     { number: '50+', label: 'Projects Delivered', color: 'blue-500', icon: '🚀' },
@@ -304,7 +304,7 @@ const ServicesPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
           className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 
-                     hidden min-h-xl:flex justify-center"
+                     flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('services-grid')}

@@ -327,7 +327,7 @@ const TeamPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
           className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 
-                     hidden min-h-xl:flex justify-center"
+                     flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('team-members')}
