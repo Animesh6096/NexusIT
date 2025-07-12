@@ -7,6 +7,10 @@ const sadatPhoto = "/team/sadat3.jpg"
 const animeshPhoto = "/team/24141102_Animesh Bhattacharjee_Photo.jpg"
 const fuadPhoto = "/team/fuad.jpg"
 const zamiPhoto = "/team/Zami.jpg"
+const anitPhoto = "/team/Anit.jpg"
+const SakibPhoto = "/team/Sakib.jpg"
+const rewanPhoto = "https://media.licdn.com/dms/image/v2/D5603AQHzv_uLI72XKQ/profile-displayphoto-shrink_800_800/B56ZVw8OHXHoAc-/0/1741356592228?e=1756944000&v=beta&t=AUAgWZ-VA2x0QyCSzi-xtSEbnnuobwE7rA4erzDFWkY"
+const srijonPhoto = "/team/Srijon.jpg"
 
 interface TeamMember {
   name: string;
@@ -36,7 +40,7 @@ const managementTeam: TeamMember[] = [
   {
     name: "Srijon Basak",
     role: "Project Manager",
-    image: "https://scontent-sin11-2.xx.fbcdn.net/v/t39.30808-6/473190466_1157625655961658_5570924613633303658_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHu0cdCfxBdeKZQkcbAjQVVmpOqPyWPZLiak6o_JY9kuL7ilqsXNhvPvFrHhBcy2tUDJp-61AUu-Hh_Kj2zErqj&_nc_ohc=fCqFkDdrNL8Q7kNvwHKkug8&_nc_oc=AdkYcktdhzSqcIRgyQ_e0nyLuG9xljVYMhqTuRm0wtIXMwFj4wbduzcycjENtB2pr1N2oRigrEvqWrPfbBDCYCa1&_nc_zt=23&_nc_ht=scontent-sin11-2.xx&_nc_gid=b6_Ry2sQv72w1h1powe4QQ&oh=00_AfNDWdCgbTcFSaM3GCqgRuQwgEx8mzn10bICMcI2AyUWCQ&oe=68676D05",
+    image: srijonPhoto,
     bio: "Experienced project manager ensuring timely delivery and quality in all projects.",
     socials: {
       facebook: "https://www.facebook.com/srij0nbasak",
@@ -82,7 +86,7 @@ const developmentTeam: TeamMember[] = [
   {
     name: "Md Sakibur Rahman",
     role: "Front-end Developer",
-    image: "https://scontent.fdac189-1.fna.fbcdn.net/v/t39.30808-6/512544324_3746147742184716_4661196669346284031_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH4MMCW8CaXlEF0cParnH8JveHti3Iorui94e2Lciiu6ATSZ4mbUrfe3HSAw9G65kdbK-XAz56m8AiNGpq8PCBQ&_nc_ohc=rJFcgcm2CC8Q7kNvwFTsWtT&_nc_oc=AdlmcdKPpRdAVnwOCF3mwutKNfe7YaQ05XEVxN_pNrQ3Jm_nIQXj8wJ1ic0xI30_bFUhtnW-JZZHmVN0wOBBO6TC&_nc_zt=23&_nc_ht=scontent.fdac189-1.fna&_nc_gid=uY_YBsld8BoonDyklaow2w&oh=00_AfNq4-nfFG7HkdbeDAUAhODzp0u82NE-lNuq03q0RmNLRQ&oe=6868E5B0",
+    image: SakibPhoto,
     bio: "Frontend developer passionate about creating intuitive and engaging user interfaces.",
     socials: {
       facebook: "https://www.facebook.com/sakiburrahman.akash",
@@ -104,7 +108,7 @@ const developmentTeam: TeamMember[] = [
   {
     name: "Anit Paul",
     role: "Back-end Developer",
-    image: "https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/490295859_2131399120623706_5498561025883927298_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGNwjU_ZDstO1fiZzZ9MQLWg5Ol3oHZyuCDk6XegdnK4N5pOvOrvybSLztP2S_ZRKE1LoOTifwnO8yjRGQ7fLyr&_nc_ohc=TF3ckBdUon4Q7kNvwE2ELpN&_nc_oc=AdnSmd2rAsvDI_c6h3htUSYly5XmAaEFUJIeMi76C-LhUlvH0cDPPWMAB0B7NaVH6WggEBEP5EWDF0Px0_yxC-IQ&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&_nc_gid=8TAESkCdGMfPd0UkWKelFQ&oh=00_AfOzecPQFR3gzXcaLauhyt15vQv-yga73cw_vpC48WkC8g&oe=686778E4",
+    image: anitPhoto,
     bio: "Backend developer focused on building robust and efficient server-side applications.",
     socials: {
       facebook: "https://www.facebook.com/dean.anit",
@@ -118,7 +122,7 @@ const qualityAssuranceTeam: TeamMember[] = [
   {
     name: "Md Rezwanur Rahman",
     role: "QA Team Lead",
-    image: "https://media.licdn.com/dms/image/v2/D5603AQHzv_uLI72XKQ/profile-displayphoto-shrink_800_800/B56ZVw8OHXHoAc-/0/1741356592228?e=1756944000&v=beta&t=AUAgWZ-VA2x0QyCSzi-xtSEbnnuobwE7rA4erzDFWkY",
+    image: rewanPhoto,
     bio: "QA team lead ensuring the highest quality standards in all our software products.",
     socials: {
       facebook: "https://www.facebook.com/rayjan.bzs17",
