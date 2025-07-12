@@ -418,12 +418,13 @@ const CareersPage = () => {
           </div>
         </div>
 
-        {/* Enhanced Scroll Indicator */}
+        {/* Enhanced Scroll Indicator - Hidden on low height displays */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 flex justify-center"
+          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 
+                     hidden min-h-lg:flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('why-join-us')}

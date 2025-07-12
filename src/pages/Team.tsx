@@ -166,174 +166,158 @@ const TeamPage = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15
+        staggerChildren: 0.3
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { 
+        duration: 0.8,
+        ease: "easeOut"
+      } 
+    }
   }
 
   return (
     <>
       {/* Hero Section */}
       <section className="hero-section relative min-h-[650px] h-[calc(100vh-4rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-1rem)] lg:h-screen xl:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-green-900 to-blue-900 pt-16 lg:pt-20">
-        {/* Team Connection Lines Background */}
-        <div className="absolute inset-0 opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 1200 800">
-            {[...Array(8)].map((_, i) => (
-              <motion.line
-                key={i}
-                x1={Math.random() * 1200}
-                y1={Math.random() * 800}
-                x2={Math.random() * 1200}
-                y2={Math.random() * 800}
-                stroke="currentColor"
-                strokeWidth="1"
-                className="text-white/30"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 3, delay: i * 0.3, repeat: Infinity, repeatType: "reverse" }}
-              />
-            ))}
-            {[...Array(12)].map((_, i) => (
-              <motion.circle
-                key={i}
-                cx={Math.random() * 1200}
-                cy={Math.random() * 800}
-                r="4"
-                fill="currentColor"
-                className="text-primary/60"
-                animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }}
-                transition={{ duration: 2 + Math.random(), repeat: Infinity, delay: Math.random() * 2 }}
-              />
-            ))}
-          </svg>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-bounce"></div>
         </div>
-
-        {/* Floating Avatar Elements */}
+        
+        {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(6)].map((_, i) => (
-            <motion.div
+          {[...Array(20)].map((_, i) => (
+            <div
               key={i}
-              className="absolute w-16 h-16 bg-gradient-to-br from-primary/20 to-green-500/20 rounded-full border border-white/20 backdrop-blur-sm"
+              className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
               style={{
-                left: `${10 + Math.random() * 80}%`,
-                top: `${10 + Math.random() * 80}%`,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
               }}
-              animate={{
-                y: [0, -20, 0],
-                x: [0, 10, 0],
-                rotate: [0, 5, 0],
-              }}
-              transition={{
-                duration: 4 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            >
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center">
-                <div className="w-8 h-8 bg-primary/40 rounded-full"></div>
-              </div>
-            </motion.div>
+            ></div>
           ))}
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col h-full">
-          <div className="text-center max-w-5xl mx-auto py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 flex-1 flex flex-col justify-center pb-16 sm:pb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="hidden sm:inline-block px-6 py-3 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-4 sm:mb-6 lg:mb-8"
-            >
-              <span className="text-green-400 font-medium text-sm sm:text-base">Meet Our Team</span>
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8"
-            >
-              The Minds Behind{' '}
-              <span className="bg-gradient-to-r from-primary via-green-400 to-blue-400 bg-clip-text text-transparent">
-                SLYTHOS IT
-              </span>
-            </motion.h1>
-            
-            <motion.div 
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="h-1 w-32 bg-gradient-to-r from-primary to-green-400 mb-6 sm:mb-8 mx-auto"
-            ></motion.div>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto"
-            >
-              Meet the talented individuals who bring expertise from diverse fields 
-              to deliver exceptional solutions and drive SLYTHOS IT's success.
-            </motion.p>
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-2 sm:py-4 md:py-6 lg:py-8 xl:py-10 flex-1 justify-center pb-16 sm:pb-20">
+            {/* Content */}
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="hidden sm:inline-block px-4 py-2 bg-green-500/20 backdrop-blur-sm rounded-full border border-green-500/30 mb-6"
+              >
+                <span className="text-green-400 font-medium text-sm sm:text-base">Meet Our Team</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6"
+              >
+                The Minds Behind{' '}
+                <span className="bg-gradient-to-r from-primary via-green-400 to-blue-400 bg-clip-text text-transparent">
+                  SLYTHOS IT
+                </span>
+              </motion.h1>
+              
+              <motion.div 
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="h-1 w-24 bg-gradient-to-r from-primary to-green-400 mb-8 mx-auto lg:mx-0"
+              ></motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed"
+              >
+                Meet the talented individuals who bring expertise from diverse fields 
+                to deliver exceptional solutions and drive SLYTHOS IT's success.
+              </motion.p>
 
-            {/* Team Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto"
-            >
-              {[
-                { number: '10+', label: 'Team Members', color: 'primary' },
-                { number: '5+', label: 'Departments', color: 'green-500' },
-                { number: '15+', label: 'Years Combined', color: 'blue-500' },
-                { number: '100%', label: 'Dedication', color: 'purple-500' }
-              ].map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  className={`bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 group min-h-[80px] sm:min-h-[100px] lg:min-h-[140px] flex flex-col justify-center items-center`}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ duration: 0.3 }}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Button 
+                  onClick={() => scrollToSection('team-members')}
+                  variant="primary" 
+                  className="px-8 py-3 text-lg hover:scale-105 transition-transform duration-300"
                 >
-                  <motion.div 
-                    className={`w-4 h-4 sm:w-6 sm:h-6 lg:w-12 lg:h-12 bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 rounded-sm sm:rounded-md lg:rounded-xl mx-auto mb-1 sm:mb-2 lg:mb-4 flex items-center justify-center`}
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <div className={`w-2 h-2 sm:w-3 sm:h-3 lg:w-6 lg:h-6 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-sm lg:rounded-lg`}></div>
-                  </motion.div>
-                  <div className="text-sm sm:text-base lg:text-2xl xl:text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-gray-300 text-xs sm:text-sm text-center leading-tight">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+                  Meet the Team
+                </Button>
+                <Button 
+                  to="/careers"
+                  variant="secondary" 
+                  className="px-8 py-3 text-lg bg-white/5 backdrop-blur-sm border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300"
+                >
+                  Join Our Team
+                </Button>
+              </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Button 
-                onClick={() => scrollToSection('team-members')}
-                variant="primary" 
-                className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300 shadow-lg"
+            {/* Team Stats Visual */}
+            <div className="lg:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="relative"
               >
-                Meet the Team
-              </Button>
-              <Button 
-                to="/careers"
-                variant="secondary" 
-                className="px-10 py-4 text-lg bg-white/5 backdrop-blur-sm border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300"
-              >
-                Join Our Team
-              </Button>
-            </motion.div>
+                <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                    {[
+                      { number: '10+', label: 'Team Members', color: 'primary' },
+                      { number: '5+', label: 'Departments', color: 'green-500' },
+                      { number: '15+', label: 'Years Combined', color: 'blue-500' },
+                      { number: '100%', label: 'Dedication', color: 'purple-500' }
+                    ].map((stat, index) => (
+                      <motion.div 
+                        key={index}
+                        className={`bg-${stat.color === 'primary' ? 'primary' : stat.color}/20 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-6 text-center border border-${stat.color === 'primary' ? 'primary' : stat.color}/30 min-h-[80px] sm:min-h-[90px] lg:min-h-[100px] flex flex-col justify-center`}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">{stat.number}</div>
+                        <div className="text-gray-300 text-xs sm:text-sm">{stat.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Floating decorative elements */}
+                <motion.div
+                  className="absolute -top-4 -right-4 w-20 h-20 bg-green-500/30 rounded-full blur-xl"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                ></motion.div>
+                <motion.div
+                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/30 rounded-full blur-lg"
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity }}
+                ></motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
@@ -342,7 +326,8 @@ const TeamPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 flex justify-center"
+          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 
+                     hidden min-h-xl:flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('team-members')}

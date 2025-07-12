@@ -119,131 +119,182 @@ const ServicesPage = () => {
     <>
       {/* Hero Section */}
       <section className="hero-section relative min-h-[650px] h-[calc(100vh-4rem)] sm:h-[calc(100vh-2rem)] md:h-[calc(100vh-1rem)] lg:h-screen xl:h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 pt-16 lg:pt-20">
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}></div>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-bounce"></div>
         </div>
-
-        {/* Floating Service Icons */}
+        
+        {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute top-20 left-10 text-primary/30"
-            animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6 0V3m2 3H7m10 0v5a2 2 0 01-2 2H9a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2zM7 21h10a2 2 0 002-2v-8a2 2 0 00-2-2H7a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </motion.div>
-          <motion.div
-            className="absolute top-32 right-20 text-blue-400/30"
-            animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity }}
-          >
-            <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
-          </motion.div>
-          <motion.div
-            className="absolute bottom-32 left-20 text-purple-400/30"
-            animate={{ y: [0, -10, 0], rotate: [0, 3, 0] }}
-            transition={{ duration: 5, repeat: Infinity }}
-          >
-            <svg className="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-            </svg>
-          </motion.div>
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${3 + Math.random() * 2}s`
+              }}
+            ></div>
+          ))}
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col h-full">
-          <div className="text-center max-w-5xl mx-auto py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 flex-1 flex flex-col justify-center pb-16 sm:pb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="hidden sm:inline-block px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-4 sm:mb-6 lg:mb-8"
-            >
-              <span className="text-primary font-medium text-sm sm:text-base">Our Services</span>
-            </motion.div>
-            
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8"
-            >
-              Comprehensive{' '}
-              <span className="bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Digital Solutions
-              </span>
-            </motion.h1>
-            
-            <motion.div 
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="h-1 w-32 bg-gradient-to-r from-primary to-purple-400 mb-6 sm:mb-8 mx-auto"
-            ></motion.div>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl text-gray-200 mb-6 sm:mb-8 lg:mb-12 leading-relaxed max-w-4xl mx-auto"
-            >
-              From web development to AI implementation, we provide end-to-end services 
-              designed to transform your business and drive unprecedented success.
-            </motion.p>
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 py-2 sm:py-3 md:py-4 lg:py-6 xl:py-8 flex-1 justify-center pb-12 sm:pb-16">
+            {/* Content */}
+            <div className="lg:w-1/2 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="hidden sm:inline-block px-4 py-2 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 mb-4"
+              >
+                <span className="text-primary font-medium text-sm sm:text-base">Our Services</span>
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4"
+              >
+                Comprehensive{' '}
+                <span className="bg-gradient-to-r from-primary via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Digital Solutions
+                </span>
+              </motion.h1>
+              
+              <motion.div 
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="h-1 w-24 bg-gradient-to-r from-primary to-purple-400 mb-6 mx-auto lg:mx-0"
+              ></motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-lg sm:text-xl text-gray-200 mb-6 leading-relaxed"
+              >
+                From web development to AI implementation, we provide end-to-end services 
+                designed to transform your business and drive unprecedented success.
+              </motion.p>
 
-            {/* Service Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 lg:gap-6 mb-4 sm:mb-6 lg:mb-8 max-w-4xl mx-auto"
-            >
-              {[
-                { number: '7+', label: 'Core Services' },
-                { number: '50+', label: 'Projects Delivered' },
-                { number: '99%', label: 'Client Satisfaction' },
-                { number: '24/7', label: 'Support Available' }
-              ].map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl lg:rounded-2xl p-2 sm:p-4 lg:p-6 border border-white/20 min-h-[80px] sm:min-h-[100px] lg:min-h-[140px] flex flex-col justify-center items-center"
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
-                  transition={{ duration: 0.3 }}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <Button 
+                  onClick={() => scrollToSection('services-grid')}
+                  variant="primary" 
+                  className="px-8 py-3 text-lg hover:scale-105 transition-transform duration-300"
                 >
-                  <div className="text-base sm:text-lg lg:text-2xl xl:text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-gray-300 text-xs sm:text-sm text-center leading-tight">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+                  Explore Services
+                </Button>
+                <Button 
+                  to="/contact"
+                  variant="secondary" 
+                  className="px-8 py-3 text-lg bg-white/5 backdrop-blur-sm border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300"
+                >
+                  Get Quote
+                </Button>
+              </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
-              <Button 
-                onClick={() => scrollToSection('services-grid')}
-                variant="primary" 
-                className="px-10 py-4 text-lg hover:scale-105 transition-transform duration-300 shadow-lg"
+            {/* Service Stats Visual */}
+            <div className="lg:w-1/2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="relative"
               >
-                Explore Services
-              </Button>
-              <Button 
-                to="/contact"
-                variant="secondary" 
-                className="px-10 py-4 text-lg bg-white/5 backdrop-blur-sm border border-white/30 hover:bg-white/15 hover:border-white/50 transition-all duration-300"
-              >
-                Get Quote
-              </Button>
-            </motion.div>
+                {/* Compact Vertical Stack Design */}
+                <div className="space-y-3">
+                  {[
+                    { number: '10+', label: 'Core Services', color: 'primary', icon: '⚡' },
+                    { number: '50+', label: 'Projects Delivered', color: 'blue-500', icon: '🚀' },
+                    { number: '99%', label: 'Client Satisfaction', color: 'purple-500', icon: '⭐' },
+                    { number: '24/7', label: 'Support Available', color: 'green-500', icon: '🔧' }
+                  ].map((stat, index) => (
+                    <motion.div 
+                      key={index}
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.6 + index * 0.08 }}
+                      className="relative group"
+                    >
+                      <div className="flex items-center bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-lg rounded-xl p-3 lg:p-4 border border-white/20 hover:border-white/40 transition-all duration-300">
+                        {/* Compact Icon */}
+                        <motion.div 
+                          className="flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-white/20 to-white/10 rounded-lg flex items-center justify-center text-lg lg:text-xl mr-3 lg:mr-4"
+                          whileHover={{ rotate: 360, scale: 1.1 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          {stat.icon}
+                        </motion.div>
+                        
+                        {/* Compact Content */}
+                        <div className="flex-1">
+                          <div className="flex items-baseline gap-2 mb-0.5">
+                            <motion.span 
+                              className="text-xl lg:text-3xl font-bold text-white"
+                              whileHover={{ scale: 1.05 }}
+                              transition={{ duration: 0.2 }}
+                            >
+                              {stat.number}
+                            </motion.span>
+                            <div className={`w-1.5 h-1.5 lg:w-2 lg:h-2 bg-${stat.color === 'primary' ? 'primary' : stat.color} rounded-full animate-pulse`}></div>
+                          </div>
+                          <div className="text-gray-300 text-xs lg:text-sm font-medium">{stat.label}</div>
+                        </div>
+                        
+                        {/* Compact Hover Arrow */}
+                        <motion.div 
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          initial={{ x: -10 }}
+                          whileHover={{ x: 0 }}
+                        >
+                          <svg className="w-4 h-4 lg:w-5 lg:h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                          </svg>
+                        </motion.div>
+                      </div>
+                      
+                      {/* Subtle Animated Border */}
+                      <motion.div
+                        className={`absolute inset-0 rounded-xl bg-gradient-to-r from-${stat.color === 'primary' ? 'primary' : stat.color}/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                        style={{ zIndex: -1 }}
+                      ></motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                {/* Smaller Background Elements */}
+                <motion.div
+                  className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full blur-2xl"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                ></motion.div>
+                <motion.div
+                  className="absolute -bottom-6 -left-6 w-20 h-20 bg-gradient-to-br from-primary/20 to-green-500/20 rounded-full blur-xl"
+                  animate={{ 
+                    scale: [1.1, 1, 1.1],
+                    opacity: [0.4, 0.6, 0.4]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                ></motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
@@ -252,7 +303,8 @@ const ServicesPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 flex justify-center"
+          className="absolute bottom-2 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-12 left-0 right-0 z-30 
+                     hidden min-h-xl:flex justify-center"
         >
           <motion.button 
             onClick={() => scrollToSection('services-grid')}
