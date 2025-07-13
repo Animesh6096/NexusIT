@@ -118,7 +118,7 @@ const AboutPage = () => {
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">50+</div>
+                      <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-white mb-1 sm:mb-2">5+</div>
                       <div className="text-gray-300 text-xs sm:text-sm">Projects Completed</div>
                     </motion.div>
                     <motion.div 
@@ -471,7 +471,7 @@ const AboutPage = () => {
                     <ul className="space-y-1 md:space-y-2 text-sm md:text-base text-gray-600 dark:text-gray-300">
                       <li>• Maintain 95%+ client retention through SLA-driven support.</li>
                       <li>• Deliver 30% faster project timelines via agile DevOps pipelines.</li>
-                      <li>• Launch a client education portal with 50+ tech certifications by 2025.</li>
+                      <li>• Launch a client education portal with 5+ tech certifications by 2025.</li>
                     </ul>
                   </div>
                 </motion.div>
