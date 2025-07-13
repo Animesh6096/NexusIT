@@ -77,7 +77,7 @@ const Footer = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-3 mb-4 max-w-xs mx-auto md:mx-0">
                   <div className="text-center p-3 bg-white/70 dark:bg-white/10 rounded-lg border border-gray-300 dark:border-white/10">
-                    <div className="text-xl font-bold text-primary mb-1">50+</div>
+                    <div className="text-xl font-bold text-primary mb-1">5+</div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">Projects</div>
                   </div>
                   <div className="text-center p-3 bg-white/70 dark:bg-white/10 rounded-lg border border-gray-300 dark:border-white/10">
