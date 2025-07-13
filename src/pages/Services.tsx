@@ -219,7 +219,7 @@ const ServicesPage = () => {
                 <div className="grid grid-cols-2 lg:block lg:space-y-3 gap-3 lg:gap-0">
                   {[
                     { number: '10+', label: 'Core Services', color: 'primary', icon: '⚡' },
-                    { number: '50+', label: 'Projects Delivered', color: 'blue-500', icon: '🚀' },
+                    { number: '5+', label: 'Projects Delivered', color: 'blue-500', icon: '🚀' },
                     { number: '99%', label: 'Client Satisfaction', color: 'purple-500', icon: '⭐' },
                     { number: '24/7', label: 'Support Available', color: 'green-500', icon: '🔧' }
                   ].map((stat, index) => (

@@ -185,7 +185,7 @@ const Home = () => {
                 className="flex flex-wrap gap-8 justify-center lg:justify-start"
               >
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">50+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">5+</div>
                   <div className="text-sm text-gray-400">Projects Delivered</div>
                 </div>
                 <div className="text-center">
@@ -305,7 +305,7 @@ const Home = () => {
                 className="grid grid-cols-2 gap-3 sm:gap-6"
               >
                 <div className="text-center p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">50+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">5+</div>
                   <div className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 font-medium">Projects Completed</div>
                 </div>
                 <div className="text-center p-3 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
